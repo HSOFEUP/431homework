@@ -21,7 +21,7 @@ Due **2017-09-15** at noon. Version: 2017-08-27
 General Instructions
 ====================
 
-This assignment requires you to analyze some data, and prepare a report in the form of an HTML, Word or PDF file, using R Markdown. We have provided you with a very useful R Markdown document template for this assignment called `YOURNAME-hw1.Rmd` that you should use to complete the assignment. The `YOURNAME-hw1.Rmd` file is part of the [general download of data and code materials](https://github.com/THOMASELOVE/431data). Just click on the green **Click or download** button and select Download ZIP to get all of the files you'll need, including the `YOURNAME-hw1.Rmd` template.
+This assignment requires you to analyze some data, and prepare a report in the form of an HTML, Word or PDF file, using R Markdown. We have provided you with a very useful R Markdown document template for this assignment called `YOURNAME-hw1.Rmd` that you should use to complete the assignment. The `YOURNAME-hw1.Rmd` file is part of the [downloadable data and code materials](https://github.com/THOMASELOVE/431data). Just click on the green **Click or download** button and select Download ZIP to get all of the files you'll need, including the `YOURNAME-hw1.Rmd` template.
 
 1.  Your final submission should include both your final Markdown file (renamed to replace YOURNAME with your name) and either a Word document (`YOURNAME-hw1.docx`), PDF (`YOURNAME-hw1.pdf`) or HTML (`YOURNAME-hw1.html`) document generated from your R Markdown file. Submit your files via canvas.case.edu as described in the [Course Syllabus](https://thomaselove.github.io/431syllabus/).
 

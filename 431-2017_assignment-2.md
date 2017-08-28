@@ -19,7 +19,7 @@ Please review the General Information provided in [Assignment 1](https://github.
 Question 1 - When is "more data" not necessarily a good thing?
 ==============================================================
 
-Read the Introduction and Chapter 1 of Nate Silver's *The Signal and the Noise*. One possible takeaway, particularly from the Introduction, might be that increased access to information can do more harm than good.
+Read the Introduction and Chapter 1 of Nate Silver's *The Signal and the Noise*. One possible takeaway, particularly from the Introduction, suggested, for example in a review by Jonah Sinick, might be that increased access to information can do more harm than good.
 
 Tell us about an example in your own field/work/experience where a "surplus" of information made (or makes) it easier for people dealing with a complex system to cherry-pick information that supports their prior positions. What were the implications of your example in terms of lessons that can be learned? If you can connect your example to some of the lessons described in the Chapter 1 discussion of the failure to predict the 2008 catastrophe on the US economy, that would be welcome.
 
