@@ -1,5 +1,6 @@
 # 431homework
-Homework Assignments for PQHS/CRSP/MPHP 431
+
+There are six main Homework Assignments for PQHS/CRSP/MPHP 431.
 
 The schedule is
 
