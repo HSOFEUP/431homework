@@ -16,3 +16,5 @@ You will turn in your Assignments using the Canvas system at https://canvas.case
 Each assignment will require you to analyze some data, and prepare a report using R Markdown. You will submit both your Markdown file, and an HTML, PDF or Word document built from that Markdown file.
 
 More details available in the Assignments themselves, and the [Course Syllabus](https://thomaselove.github.io/431syllabus)
+
+The main site for the course is https://github.com/THOMASELOVE/431
