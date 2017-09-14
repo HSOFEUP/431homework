@@ -33,7 +33,7 @@ Please answer **question 1.50** from the Diez et al. *OpenIntro Stats 3* text, w
 Question 3
 ==========
 
-A study of 100 subjects unfortunately contained 5 people with missing data. This was coded as `99` in the data set. Assume that the true value for the mean is 45, and for the standard deviation is 5.6, with a minimum of 16 and maximum of 65, based on treatihg these `99` values as if they were `NA`s. If the statistician instead went ahead and analyzed the data as if the `99`s were real, would it make the following parameter estimates *larger*, *smaller* or *stay the same*?
+A study of 100 subjects unfortunately contained 5 people with missing data. This was coded as `99` in the data set. Assume that the true value for the mean is 45, and for the standard deviation is 5.6, with a minimum of 16 and maximum of 65, based on treating these `99` values as if they were `NA`s. If the statistician instead went ahead and analyzed the data as if the `99`s were real, would it make the following parameter estimates *larger*, *smaller* or *stay the same*?
 
 1.  The mode, or most commonly observed value
 2.  The median
