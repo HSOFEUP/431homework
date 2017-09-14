@@ -54,6 +54,8 @@ The `LBWunicef.csv` file is part of the general Data and Code materials at <http
 
 Import the `LBWunicef.csv` file into R Studio, turn it into a tibble, then use that result to answer questions 4-9.
 
+I'll also note that the `gg_qq` and `skew1` functions in the `Love-boost.R` script will be used in our answer sketch, so you might consider using `source("Love-boost.R")` in your code to make those functions available. Remember that you'll have to download the `Love-boost.R` script from the website into the directory in R where you are storing your R project for Assignment 2.
+
 Question 4
 ==========
 
@@ -85,5 +87,3 @@ Question 9
 Generate a "random" sample of 75 observations from a Normal distribution with mean 100 and standard deviation 10 using R. The `rnorm` function is likely to be helpful. Now, display a normal Q-Q plot of these data, using the `ggplot2` package from the `tidyverse`. How well does the Q-Q plot approximate a straight line?
 
 Repeat this task for a second sample of 150 Normally distributed observations, again with a mean of 100 and a standard deviation of 10. Then repeat it again for samples of 25 and 225 Normally distributed observations with a different mean and variance. Which of the four Q-Q plots you have developed better approximates a straight line and what should we expect the relationship of sample size with this phenomenon to be?
-
--   *Note: Question 9 motivated by a similar question in Vittinghoff et al.*
