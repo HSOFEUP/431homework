@@ -50,11 +50,11 @@ I found data (last updated Nov 2014) at [a UNICEF data site](http://data.unicef.
 -   `lbw.pct` = the nation's low birth weight percentage
 -   `least.dev` = whether or not the nation is regarded by the United Nations Population Division as one of the "least developed" countries on Earth (note that `least.dev` = 1 if the nation is in the "least developed countries" group and `least.dev` = 0 otherwise.
 
-The `LBWunicef.csv` file is part of the general Data and Code materials at <https://github.com/THOMASELOVE/431data>
+I'll also note that the `gg_qq` and `skew1` functions in the `Love-boost.R` script will be used in our answer sketch, so you might consider using `source("Love-boost.R")` in your code to make those functions available. Remember that you'll have to download the `Love-boost.R` script from the website into the directory in R where you are storing your R project for Assignment 2.
+
+The `LBWunicef.csv` file and the `Love-boost.R` script are part of the general Data and Code materials at <https://github.com/THOMASELOVE/431data>
 
 Import the `LBWunicef.csv` file into R Studio, turn it into a tibble, then use that result to answer questions 4-9.
-
-I'll also note that the `gg_qq` and `skew1` functions in the `Love-boost.R` script will be used in our answer sketch, so you might consider using `source("Love-boost.R")` in your code to make those functions available. Remember that you'll have to download the `Love-boost.R` script from the website into the directory in R where you are storing your R project for Assignment 2.
 
 Question 4
 ==========
