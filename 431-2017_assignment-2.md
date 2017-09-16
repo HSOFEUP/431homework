@@ -28,7 +28,7 @@ Please feel free to supply as many supporting details as are useful to you in re
 Question 2
 ==========
 
-Please answer **question 1.50** from the Diez et al. *OpenIntro Stats 3* text, which is described in the [Course Syllabus](https://thomaselove.github.io/431syllabus/).
+Please answer **question 1.50** from the Diez et al. *OpenIntro Stats 3* text, which is described in the [Course Syllabus](https://thomaselove.github.io/431syllabus/). This question asks you to describe the distributions in three histograms and match them to a set of box plots.
 
 Question 3
 ==========
