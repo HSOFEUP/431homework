@@ -1,6 +1,6 @@
 **431 Assignment 1**
 
-Assignment 1 Answer Sketches prepared by Dr. Love and the 431 staff are now available in R Markdown and PDF versions.
+Assignment 1 Answer Sketches prepared by Dr. Love and the 431 staff are now available in [R Markdown](https://github.com/THOMASELOVE/431homework/blob/master/HW1/431-sketch1-2017.Rmd) and [PDF](https://github.com/THOMASELOVE/431homework/blob/master/HW1/431-sketch1-pw-2017.pdf) versions.
 
 + Grades and the grading rubric will be posted here, likely on Thursday 2017-09-21.
 + When the grades file is available, it will be password protected using the class password. Download the file, even though GitHub cannot display the file (claiming it is invalid - it's not invalid, it's just password-protected.)
