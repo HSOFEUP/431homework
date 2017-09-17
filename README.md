@@ -6,8 +6,9 @@ The schedule is
 
 1. [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md) was due Friday 2017-09-15 at noon. 
 
-    + A password-protected [PDF of the answer sketch for Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-sketch1-pw-2017.pdf) is now available. If you visit the link, download the PDF file (the file isn't actually invalid as Github suggests - it's merely password protected) to your computer. Then open it using the password mentioned in class. The R Markdown file used to generate the answer sketch will appear as soon as we confirm that all students have completed the Assignment.
-    
+    + A password-protected [PDF of the answer sketch for Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/HW1/431-sketch1-pw-2017.pdf) is now available. If you visit the link, download the PDF file (the file isn't actually invalid as Github suggests - it's merely password protected) to your computer. Then open it using the password mentioned in class. 
+    + The [R Markdown file](https://github.com/THOMASELOVE/431homework/blob/master/HW1/431-sketch1-2017.Rmd) used to generate the answer sketch is also available.
+    + Go [here](https://github.com/THOMASELOVE/431homework/tree/master/HW1) for more information on grades and the grading rubric.
 
 2. [Assignment 2](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-2.md) will be due Friday 2017-09-22 at noon.
 3. [Assignment 3](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-3.md) will be due Friday 2017-09-29 at noon.
