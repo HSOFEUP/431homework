@@ -7,6 +7,7 @@ The schedule is
 1. [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md) was due Friday 2017-09-15 at noon. 
 
     + A password-protected [PDF of the answer sketch for Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/HW1/431-sketch1-pw-2017.pdf) is now available. If you visit the link, download the PDF file (the file isn't actually invalid as Github suggests - it's merely password protected) to your computer. Then open it using the password mentioned in class. 
+    + If you have a complaint about your grade, [read Section 13.1 of the Course Syllabus](https://thomaselove.github.io/431syllabus/general-course-policies.html) first.
     + The [R Markdown file](https://github.com/THOMASELOVE/431homework/blob/master/HW1/431-sketch1-2017.Rmd) used to generate the answer sketch is also available.
     + Go [here](https://github.com/THOMASELOVE/431homework/tree/master/HW1) for more information on grades and the grading rubric.
 
