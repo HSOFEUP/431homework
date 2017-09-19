@@ -14,7 +14,7 @@ Due **2017-09-22** at noon. Version: 2017-08-27
 -   [Question 8](#question-8)
 -   [Question 9](#question-9)
 
-Please review the General Information provided in [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md), as well as at <https://github.com/THOMASELOVE/431homework> and in the [Course Syllabus](https://thomaselove.github.io/431syllabus/)
+Please review the General Information provided in [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md), as well as the information at <https://github.com/THOMASELOVE/431homework> and in the [Course Syllabus](https://thomaselove.github.io/431syllabus/)
 
 Question 1 - When is "more data" not necessarily a good thing?
 ==============================================================
@@ -87,3 +87,4 @@ Question 9
 Generate a "random" sample of 75 observations from a Normal distribution with mean 100 and standard deviation 10 using R. The `rnorm` function is likely to be helpful. Now, display a normal Q-Q plot of these data, using the `ggplot2` package from the `tidyverse`. How well does the Q-Q plot approximate a straight line?
 
 Repeat this task for a second sample of 150 Normally distributed observations, again with a mean of 100 and a standard deviation of 10. Then repeat it again for samples of 25 and 225 Normally distributed observations with a different mean and variance. Which of the four Q-Q plots you have developed better approximates a straight line and what should we expect the relationship of sample size with this phenomenon to be?
+
