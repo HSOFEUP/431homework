@@ -18,7 +18,18 @@ The schedule is
 
 You will turn in your Assignments using the Canvas system at https://canvas.case.edu. The course’s primary listing is PQHS 431, but students in CRSP 431 and MPHP 431 should find the same information. The link to post your responses for each new Assignment will appear a day or two after the deadline for the preceding assignment has passed.
 
-Each assignment will require you to analyze some data, and prepare a report using R Markdown. You will submit both your Markdown file, and an HTML, PDF or Word document built from that Markdown file.
+Each assignment will require you to analyze some data, and prepare a report using R Markdown. You will submit both your Markdown file, and an HTML, PDF or Word document built from that Markdown file. Our preference is HTML.
+
+## What We'd Ideally See in a Homework Assignment Submission
+
+1. Submit HTML and R Markdown, without zipping the files together.
+2. Use complete sentences, and proper English grammar, syntax and spelling.
+3. Avoid printing things we don't need to see (like data frames) to judge your work.
+4. Place empty lines before and after each code chunk.
+5. Name every chunk, with no characters other than letters, numbers and underscores. No repetition!
+6. Use headings to indicate the question being solved. Then leave a blank line before continuing with text.
+7. Avoid repeating Dr. Love's questions verbatim.
+8. Use the approach laid out in the [YOURNAME-hw_template.Rmd](https://github.com/THOMASELOVE/431homework/blob/master/YOURNAME-hw_template.Rmd) file posted above.
 
 More details available in the Assignments themselves, and the [Course Syllabus](https://thomaselove.github.io/431syllabus)
 
