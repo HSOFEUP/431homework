@@ -28,7 +28,7 @@ Please feel free to supply as many supporting details as are useful to you in re
 Question 2
 ==========
 
-Please answer **question 1.50** from the Diez et al. *OpenIntro Stats 3* text, which is described in the [Course Syllabus](https://thomaselove.github.io/431syllabus/). The question we want you to answer asks you to describe the distributions in three histograms and match them to a set of box plots. 
+Please answer **exercise 1.50** from Section 1.9 of the Diez et al. *OpenIntro Stats 3* text, which is described in the [Course Syllabus](https://thomaselove.github.io/431syllabus/). The question we want you to answer is entitled "Mix-and-match" and asks you to describe the distributions in three histograms, then match them to box plots. 
 
 Question 3
 ==========
