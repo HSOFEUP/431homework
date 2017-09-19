@@ -11,7 +11,7 @@ output:
 
 ## Setup
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, message = FALSE}
 knitr::opts_chunk$set(comment = NA)
 
 # insert other packages you need here
