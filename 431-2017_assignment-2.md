@@ -1,7 +1,7 @@
 431 Assignment 2
 ================
 Thomas E. Love
-Due **2017-09-22** at noon. Version: 2017-09-19
+Due **2017-09-22** at noon. Version: 2017-09-20
 
 -   [Question 1 - When is "more data" not necessarily a good thing?](#question-1---when-is-more-data-not-necessarily-a-good-thing)
 -   [Question 2](#question-2)
@@ -28,12 +28,12 @@ Please feel free to supply as many supporting details as are useful to you in re
 Question 2
 ==========
 
-Please answer **question 1.50** from the Diez et al. *OpenIntro Stats 3* text, which is described in the [Course Syllabus](https://thomaselove.github.io/431syllabus/).
+Please answer **exercise 1.50** from Section 1.9 of the Diez et al. *OpenIntro Stats 3* text, which is described in the [Course Syllabus](https://thomaselove.github.io/431syllabus/). The question we want you to answer is entitled "Mix-and-match" and asks you to describe the distributions in three histograms, then match them to box plots.
 
 Question 3
 ==========
 
-A study of 100 subjects unfortunately contained 5 people with missing data. This was coded as `99` in the data set. Assume that the true value for the mean is 45, and for the standard deviation is 5.6, with a minimum of 16 and maximum of 65. If the statistician went ahead and analyzed the data as if the `99`s were real, would it make the following parameter estimates *larger*, *smaller* or *stay the same*?
+A study of 100 subjects unfortunately contained 5 people with missing data. This was coded as `99` in the data set. Assume that the true value for the mean is 45, and for the standard deviation is 5.6, with a minimum of 16 and maximum of 65, based on treating these `99` values as if they were `NA`s. If the statistician instead went ahead and analyzed the data as if the `99`s were real, would it make the following parameter estimates *larger*, *smaller* or *stay the same*?
 
 1.  The mode, or most commonly observed value
 2.  The median
@@ -50,7 +50,8 @@ I found data (last updated Nov 2014) at [a UNICEF data site](http://data.unicef.
 -   `lbw.pct` = the nation's low birth weight percentage
 -   `least.dev` = whether or not the nation is regarded by the United Nations Population Division as one of the "least developed" countries on Earth (note that `least.dev` = 1 if the nation is in the "least developed countries" group and `least.dev` = 0 otherwise.
 
-The `LBWunicef.csv` file is part of the general Data and Code materials at <https://github.com/THOMASELOVE/431data>
+-   I'll also note that the `gg_qq` and `skew1` functions in the `Love-boost.R` script will be used in our answer sketch, so you might consider using `source("Love-boost.R")` in your code to make those functions available. Remember that you'll have to download the `Love-boost.R` script from the website into the directory in R where you are storing your R project for Assignment 2.
+-   The `LBWunicef.csv` file and the `Love-boost.R` script are part of the general Data and Code materials at <https://github.com/THOMASELOVE/431data>
 
 Import the `LBWunicef.csv` file into R Studio, turn it into a tibble, then use that result to answer questions 4-9.
 
@@ -85,5 +86,3 @@ Question 9
 Generate a "random" sample of 75 observations from a Normal distribution with mean 100 and standard deviation 10 using R. The `rnorm` function is likely to be helpful. Now, display a normal Q-Q plot of these data, using the `ggplot2` package from the `tidyverse`. How well does the Q-Q plot approximate a straight line?
 
 Repeat this task for a second sample of 150 Normally distributed observations, again with a mean of 100 and a standard deviation of 10. Then repeat it again for samples of 25 and 225 Normally distributed observations with a different mean and variance. Which of the four Q-Q plots you have developed better approximates a straight line and what should we expect the relationship of sample size with this phenomenon to be?
-
--   *Note: Question 9 motivated by a similar question in Vittinghoff et al.*
