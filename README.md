@@ -31,6 +31,7 @@ Each assignment will require you to analyze some data, and prepare a report usin
 6. Use headings to indicate the question being solved. Then leave a blank line before continuing with text.
 7. Avoid repeating Dr. Love's questions verbatim.
 8. Use the approach laid out in the [YOURNAME-hw_template.Rmd](https://github.com/THOMASELOVE/431homework/blob/master/YOURNAME-hw_template.Rmd) file posted above.
+9. Your life will be far happier if you use an R Project every time you open R to do work. Just start your R Studio session with File ... New Project or File ... Open Project, as appropriate. We recommend that you use a separate R project for each homework assignment.
 
 More details available in the Assignments themselves, and the [Course Syllabus](https://thomaselove.github.io/431syllabus)
 
