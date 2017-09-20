@@ -24,7 +24,7 @@ Each assignment will require you to analyze some data, and prepare a report usin
 ## What We'd Ideally See in a Homework Assignment Submission
 
 1. Submit HTML and R Markdown, without zipping the files together.
-2. Use complete sentences, and proper English grammar, syntax and spelling.
+2. Use complete sentences, and proper English grammar, syntax and spelling. To use R Studio's spell-checker, hit F7.
 3. Avoid printing things we don't need to see (like data frames) to judge your work.
 4. Place empty lines before and after each code chunk.
 5. Name every chunk, with no characters other than letters, numbers and underscores. No repetition!
