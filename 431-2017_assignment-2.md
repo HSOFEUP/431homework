@@ -14,7 +14,7 @@ Due **2017-09-22** at noon. Version: 2017-09-20
 -   [Question 8](#question-8)
 -   [Question 9](#question-9)
 
-This assignment should be submitted through [Canvas](https://canvas.case.edu/). We recommend the use of the [YOURNAME-hw\_template.Rmd](https://raw.githubusercontent.com/THOMASELOVE/431homework/master/YOURNAME-hw_template.Rmd) and we suggest you review the [What We'd Ideally See in a Homework Assignment Submission](https://github.com/THOMASELOVE/431homework) for some additional tips on writing your Markdown file and submitting your work.
+This assignment should be submitted through [Canvas](https://canvas.case.edu/). We recommend the use of the [YOURNAME-hw\_template.Rmd](https://raw.githubusercontent.com/THOMASELOVE/431homework/master/YOURNAME-hw_template.Rmd) and we suggest you review the [What We'd Ideally See in a Homework Assignment Submission](https://github.com/THOMASELOVE/431homework) for some additional tips on writing your Markdown file and submitting your work. I'll also remind you that spell-check is available in R Studio by hitting F7.
 
 Question 1 - When is "more data" not necessarily a good thing?
 ==============================================================
