@@ -4,7 +4,7 @@ There are six main Homework Assignments for PQHS/CRSP/MPHP 431.
 
 The schedule is
 
-1. [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md) was due Friday 2017-09-15 at noon. [View the post-deadline materials](https://github.com/THOMASELOVE/431homework/tree/master/HW1), like the answer sketch, grades and rubric. 
+1. [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md) was due Friday 2017-09-15 at noon. [View the post-deadline materials](https://github.com/THOMASELOVE/431homework/tree/master/HW1). 
 2. [Assignment 2](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-2.md) was due Friday 2017-09-22 at noon. [View the post-deadline materials](https://github.com/THOMASELOVE/431homework/tree/master/HW2), which will eventually include the answer sketch, grades and rubric. 
 
 3. [Assignment 3](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-3.md) will be due Friday 2017-09-29 at noon.
