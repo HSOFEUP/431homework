@@ -1,6 +1,6 @@
 **431 Assignment 2**
 
-Assignment 2 Answer Sketches prepared by Dr. Love and the 431 staff are available in a password-protected [PDF](https://github.com/THOMASELOVE/431homework/blob/master/HW2/431-sketch2-pw-2017.pdf). Download the file, even though GitHub cannot display the file (claiming it is invalid - it's not invalid, it's just password-protected.)
+The [Assignment 2 Answer Sketch](https://github.com/THOMASELOVE/431homework/blob/master/HW2/431-sketch2-pw-2017.pdf) prepared by Dr. Love and the 431 staff is now available. Download the file, even though GitHub cannot display the file (claiming it is invalid - it's not invalid, it's just password-protected.)
 
 Still to come are:
 
