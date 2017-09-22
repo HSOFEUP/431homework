@@ -167,7 +167,7 @@ The formula is skew~1~ = $\frac{mean - median}{SD}$ where:
 - A positive skew~1~ value indicates right (sometimes called positive) skew where the mean exceeds the median, and
 - a negative skew~1~ value indicates left skew, where the mean is less than the median. 
 - skew~1~ = 0 when the mean is equal to the median, an indication of potential symmetry.
-- skew~1~ values exceeding 0.2 in absolute value are sometimes taken to indicate fairly substantial skew (far enough from a Normal distribution to call into question whether the mean and standard deviation alone are sufficient to approximate thd data well). 
+- skew~1~ values exceeding 0.2 in absolute value are sometimes taken to indicate fairly substantial skew (far enough from a Normal distribution to call into question whether the mean and standard deviation alone are sufficient to approximate the data well). 
 - If skew~1~ exceeds 0.5 in absolute value, that indicates very strong skew.
 
 ## Interpreting a Graph with help from skew~1~
