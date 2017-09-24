@@ -1,0 +1,286 @@
+---
+title: "Assignment 2 Answer Sketch"
+author: "431 Staff"
+date: "due 2017-09-22 at noon"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+---
+
+## R Setup
+
+Here's the complete R setup we used.
+
+```{r setup, message=FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 60)
+
+library(tidyverse)
+## make sure these libraries are installed in R
+```
+
+I'll also use two homemade functions - `gg_qq` and `skew1` - that are part of the `Love-boost.R` script, so I'll source that in.
+
+```{r source_Love-boost}
+source("Love-boost.R")
+```
+
+\newpage
+
+# Question 1 
+
+*Tell us about an example in your own field/work/experience where a "surplus" of information made (or makes) it easier for people dealing with a complex system to cherry-pick information that supports their prior positions. What were the implications of your example in terms of lessons that can be learned? If you can connect your example to some of the lessons described in the Chapter 1 discussion of the failure to predict the 2008 catastrophe on the US economy, that would be welcome. Please feel free to supply as many supporting details as are useful to you in relating the story. An appropriate response to Question 1 will use complete English sentences with proper grammar and syntax, will cite a link or two to a Web URL or other published work, and be 350 $\pm$ 150 words long.*
+
+We don't write answer sketches for essay questions. We'll gather a few of the more interesting and enlightening responses, and share de-identified excerpts with the group after grading.
+
+# Question 2 
+
+*Please answer question 1.50 from the Diez et al. OpenIntro Stats 3 text* 
+
+This question asks you to describe the distributions in three histograms and match them to the box plots.
+
+a. **Histogram (a)** describes a distribution that is fairly close to Normally distributed, as it is symmetric and bell-shaped, with, perhaps a few outliers in each tail. The mean (and median) should be close to 60, with a standard deviation near 5, so that values outside of the range of (50, 70) will be unusual. This appears to be the same data as are shown in **boxplot (2)**.
+
+b. **Histogram (b)** describes a distribution that is fairly close to a uniform distribution, as it is symmetric and flat, so that it will be light-tailed compared to a Normal distribution with similar spread, and the range of observations should cover (0,100) fairly thoroughly. These are the same data as are shown in **boxplot (3)**.
+
+c. **Histogram (c)** describes a distribution that is right skewed, with the mean greater than the median, with a minimum value of 0 and a maximum larger than 6. It is likely to show outliers only on the high end of the data set. These data are shown in **boxplot (1)**.
+
+# Question 3
+
+*A study of 100 subjects unfortunately contained 5 people with missing data. This was coded as 99 in the data set. Assume that the true value for the mean is 45, and for the standard deviation is 5.6, with a minimum of 16 and maximum of 65, based on treatinhg these `99` values as if they were `NA`s. If the statistician went ahead and analyzed the data as if the 99s were real, would it make the following parameter estimates larger, smaller or stay the same?*
+
+We intended this to mean that the statistician had originally done the wrong thing (included the 99s) and now they were to be removed. This produces the following answers.
+
+a. While the *mode* would **stay the same** if at least one of the other scores was achieved by at least 6 of the 100 subjects, the more likely situation is that the mode would be **smaller**, since the original mode (if the 99s were analyzed as if they were real) would in fact be 99.
+b. The *median* would be **smaller**, in all probability, unless there were at least a six-way tie for the median value in the original set of 100 observations (including the 99s), in which case the median would **stay the same**.
+c. The *mean* would be **smaller** inevitably.
+d. The *standard deviation* would be **smaller**, inevitably.
+e. The *range* would be **smaller**, inevitably.
+
+## Getting the data for questions 4-8
+
+```{r import data for LBWunicef}
+LBWunicef <- read.csv("LBWunicef.csv") %>% tbl_df()
+```
+
+# Question 4
+
+*How many nations have non-missing low birth weight percentage estimates?*
+
+There are `r length(LBWunicef$lbw.pct)` nations with non-missing low birth weight percentage estimates.
+
+## Approach A: Using `favstats`
+
+I'll start by doing what I expect most people did, using the `mosaic` package and the `favstats` function.
+
+```{r Q4a}
+mosaic::favstats(LBWunicef$lbw.pct) ## provides n and # missing
+```
+
+In fact, there are no missing values in the low birth weight percentage data.
+
+A slicker approach, using the `%$%` version of the pipe available in the `magrittr` package, would be:
+
+```{r Q4a-2}
+library(magrittr)
+
+LBWunicef %$%
+  mosaic::favstats(lbw.pct)
+```
+
+For more on piping like this, visit the Pipes section (other tools from magrittr subsection) in [R for Data Science](http://r4ds.had.co.nz/pipes.html). The `%$%` function is described there as "exploding" out the variables in a data frame so that you can refer to them explicitly.
+
+## Approach B: Using `anyNA` and `length`
+
+Another way to see this without the `mosaic` package would have been to use the following commands:
+
+```{r Q4b}
+anyNA(LBWunicef$lbw.pct) ## returns TRUE if there are any missing (NA) values.
+length(LBWunicef$lbw.pct) ## number of values in the lbw.pct data 
+```
+
+# Question 5
+
+*Which nations have the three largest low birth weight percentages? Are each of these considered by the UN to be "least developed" nations or not?*
+
+The three largest low birth weight percentages in the data are Mauritania (35%), Pakistan (32%), and India (28%). Of these three nations, only the troubled Northern African nation of Mauritania falls in the "least developed nations" category.
+
+### Approach A: Using `dplyr`
+
+We can use `dplyr` to show a tibble that has been sorted in descending order of `lbw.pct`. R Studio's [cheat sheet for Data Transformation with dplyr](https://www.rstudio.com/resources/cheatsheets/) is very helpful here.
+
+```{r Q5-1a}
+LBWunicef %>% 
+  arrange(desc(lbw.pct))
+```
+
+And, if we wanted to view particular rows, we could arrange and then slice...
+
+```{r Q5-1b}
+LBWunicef %>%
+  arrange(desc(lbw.pct)) %>%
+  slice(1:3)
+```
+
+Another way of doing the same thing is to put the tibble into an object and then select the first three observations... 
+
+```{r Q5-1c}
+LBW.temp <- 
+  LBWunicef %>% 
+  arrange(desc(lbw.pct))
+
+LBW.temp[1:3,]
+```
+
+### Approach B: A fast, one-line alternative with `rank`
+
+```{r Q5-2}
+## The fastest one-line alternative I know
+LBWunicef[which(rank(LBWunicef$lbw.pct)>length(LBWunicef$lbw.pct)-3),]
+```
+
+### Approach C: `sort`, `which` and brute force
+
+Clearly, we could solve this problem through simple brute force, inspecting the data until we find the largest values, and then associating them with countries. The `sort` and `which` commands can help us here.
+
+```{r Q5-3a}
+sort(LBWunicef$lbw.pct) ## shows the low birth weight percentages in order (from low to high)
+## and the three highest values are 28%, 32% and 35%. 
+## These are the only nations above 27%.
+which(LBWunicef$lbw.pct > 27) ## which nations are above 27% 
+```
+
+And now that we know which countries are the top 3, we can show all of the available data related to those three countries using the brackets to identify specific rows in the data.
+
+```{r Q5-3b}
+LBWunicef[c(73, 103, 122),] ## shows us all data in those three rows.
+```
+
+\newpage
+
+# Question 6
+
+*Create a histogram of the low birth weight percentages, then superimpose a normal density function with the same mean and standard deviation in red. Based on your plot, is the standard deviation or the inter-quartile range a more appropriate measure of variation in the low birth weight rates? Why?*
+
+Here is the histogram we anticipated you would build.
+
+```{r Q6 histogram}
+ggplot(LBWunicef, aes(x = lbw.pct)) +
+  geom_histogram(aes(y = ..density..), 
+                 fill = "wheat", col = "black", 
+                 binwidth = 2) + 
+  stat_function(fun=dnorm, color="red", size = 1.5,
+                args=list(mean=mean(LBWunicef$lbw.pct), 
+                          sd=sd(LBWunicef$lbw.pct))) +
+  labs(title = "Low Birth Weight % across 180 Countries", 
+       x = "Low Birth Weight Percentage", 
+       y = "Probability Density")
+```
+
+Clearly, the plot shows substantial right skew, so assuming a Normal model is not well justified. Thus, the standard deviation is less appropriate as a measure of spread than the interquartile range.
+
+\newpage
+
+# Question 7
+
+*Create a normal Q-Q plot for the low birth weight percentage estimates. Would you say that the data are approximately Normally distributed, or not approximately Normally distributed? Justify your answer by interpreting what you see in your plot, and whatever summary statistics you deem to be useful in making your decision.*
+
+Again, the data are clearly right skewed, as indicated by the curve in the normal Q-Q plot. 
+
+```{r Q7}
+qqnorm(LBWunicef$lbw.pct, main = "Normal Q-Q plot of LBW % by country")
+qqline(LBWunicef$lbw.pct, col = "red")
+```
+
+\newpage
+
+## Drawing the Normal QQ plot with `gg_qq` from `Love-boost.R`
+
+As an alternative, we can use the gg_qq function in the `Love-boost.R` script, assuming we've successfully sourced in that script at the start.
+
+```{r use the gg_qq function}
+gg_qq(LBWunicef$lbw.pct)
+```
+
+## Summary Statistics
+
+As for summary statistics, the mean (`r round(mean(LBWunicef$lbw.pct),2)`) is well to the right of the median (`r median(LBWunicef$lbw.pct)`), and, since the standard deviation is `r round(sd(LBWunicef$lbw.pct),2)`, the skew~1~ value is also indicative of right skew, with skew~1~ = `r round(skew1(LBWunicef$lbw.pct),3)`, which is essentially the value we usually use as a minimum indicator of substantial right skew.
+
+\newpage
+
+# Question 8
+
+*Display an effective graph comparing the two development groups (least developed nations vs. all other nations) in terms of their percentages of low birth weight births. What conclusions can you draw about the distribution of low birth weight rates across the two development groups?*
+
+Generally, the low birth weight percentages are higher in the nations which are least developed, but there is considerable overlap.
+
+```{r Q8}
+## We'll start by getting the least.dev into a new factor with No and Yes, 
+## rather than its default as a numeric variable with 0 and 1
+LBWunicef$least.dev2 <- factor(LBWunicef$least.dev, labels = c("No", "Yes"))
+
+ggplot(LBWunicef, aes(x = factor(least.dev2), y = lbw.pct, fill = least.dev2)) + 
+  geom_boxplot() + 
+  guides(fill = FALSE) +
+  coord_flip() +
+  labs(title = "Low Birth Weight % by `Least Developed Nation` Status", 
+       y = "Low Birth Weight %", 
+       x = "Least Developed Nation, per UN Population Division")
+```
+
+\newpage
+
+# Question 9 
+
+*Generate a "random" sample of 75 observations from a Normal distribution with mean 100 and standard deviation 10 using R. Now, display a normal Q-Q plot of these data, using the `ggplot2` library. How well does the Q-Q plot approximate a straight line?*
+
+*Repeat this task for a second sample of 150 Normally distributed observations, again with a mean of 100 and a standard deviation of 10. Then repeat it again for samples of 25 and 225 Normally distributed observations with a different mean and variance. Which of the four Q-Q plots you have developed better approximates a straight line and what should we expect the relationship of sample size with this phenomenon to be?*
+
+From a coding perspective, I'm just looking for you to properly draw a random sample from a Normal distribution and then produce the necessary plots. 
+
+Note that you either want to use four different random seeds here, and build each sample separately, or build one long set of 475 samples `(75 + 150 + 25 + 225 = 475)` to cover all four needs, and then split the group of 475 values accordingly.
+
+Building four separate samples might look like this:
+
+```{r build four random samples separately, eval=FALSE}
+set.seed(43101); x <- rnorm(n = 75, mean = 100, sd = 10) 
+  samp1 <- data_frame(value = x, grp = rep("S-75", 75))
+set.seed(43102); x <- rnorm(n = 150, mean = 100, sd = 10) 
+  samp2 <- data_frame(value = x, grp = rep("S-150", 150))
+set.seed(43103); x <- rnorm(n = 25, mean = 100, sd = 10) 
+  samp3 <- data_frame(value = x, grp = rep("S-25", 25))
+set.seed(43104); x <- rnorm(n = 225, mean = 100, sd = 10) 
+  samp4 <- data_frame(value = x, grp = rep("S-225", 225))
+
+q9.dat <- bind_rows(samp1, samp2, samp3, samp4)
+rm(samp1, samp2, samp3, samp4, x)
+```
+
+But what I actually did was build a single set of 475 values, and then split them, using this code:
+
+```{r build four random samples}
+set.seed(4310); big.sample <- rnorm(n = 475, mean = 100, sd = 10)
+big.grp <- c(rep("n = 75", 75), rep("n = 150", 150), 
+             rep("n = 25", 25), rep("n = 225", 225))
+
+q9.dat <- data_frame(value = big.sample, grp = big.grp)
+rm(big.sample, big.grp)
+```
+
+So, now we are ready to build the four Normal Q-Q plots.
+
+\newpage
+
+All four of these plots show fairly modest deviations from what we would expect a Normal distribution to look like, usually in terms of showing a few outlying values.
+
+```{r q9 four normal qq plots, fig.height=5}
+ggplot(q9.dat, aes(sample = value, col = grp)) +
+  geom_qq(size = 2) +
+  guides(color = FALSE) +
+  facet_wrap(~ grp)
+```
+
+With larger sample sizes, there's no real reason to assume that the plots will improve substantially in terms of eliminating outliers, in fact. Once we have at least 25 points (as in all of these cases) it appears that the results are fairly reasonable (in terms of suggesting that a Normal approximation is generally valid) in all of these plots.
