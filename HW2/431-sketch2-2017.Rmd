@@ -50,15 +50,27 @@ c. **Histogram (c)** describes a distribution that is right skewed, with the mea
 
 # Question 3
 
-*A study of 100 subjects unfortunately contained 5 people with missing data. This was coded as 99 in the data set. Assume that the true value for the mean is 45, and for the standard deviation is 5.6, with a minimum of 16 and maximum of 65, based on treatinhg these `99` values as if they were `NA`s. If the statistician went ahead and analyzed the data as if the 99s were real, would it make the following parameter estimates larger, smaller or stay the same?*
+*A study of 100 subjects unfortunately contained 5 people with missing data. This was coded as 99 in the data set. Assume that the true value for the mean is 45, and for the standard deviation is 5.6, with a minimum of 16 and maximum of 65, based on treating these 99 values as if they were NAs. If the statistician instead went ahead and analyzed the data as if the 99s were real, would it make the following parameter estimates larger, smaller or stay the same?*
 
-We intended this to mean that the statistician had originally done the wrong thing (included the 99s) and now they were to be removed. This produces the following answers.
+## Two Possible Approaches
+
+Dr. Love made a note to revise this question to suggest that while the statistician had originally done the wrong thing (included the 99s) we were now removing those missing values. This produces the following answers.
 
 a. While the *mode* would **stay the same** if at least one of the other scores was achieved by at least 6 of the 100 subjects, the more likely situation is that the mode would be **smaller**, since the original mode (if the 99s were analyzed as if they were real) would in fact be 99.
 b. The *median* would be **smaller**, in all probability, unless there were at least a six-way tie for the median value in the original set of 100 observations (including the 99s), in which case the median would **stay the same**.
 c. The *mean* would be **smaller** inevitably.
 d. The *standard deviation* would be **smaller**, inevitably.
 e. The *range* would be **smaller**, inevitably.
+
+But given the adjustments actually made to the text, the other interpretation (originally the data were analyzed as if 95 people gave responses, and now the statistician is adding in five additional 99 responses) is clearly more valid. In that circumstance, we'd have the following answers.
+
+a. The *mode* would **stay the same** if at least one of the other scores was achieved by at least 6 of the 95 non-missing subjects. Otherwise, the mode would increase to 99.
+b. The *median* would likely become **larger** if we added in five 99s.
+c. The *mean* would inevitably be **larger** if we added in five 99s.
+d. The *standard deviation* would inevitably be **larger**, too.
+e. The *range* would also be **larger** after adding in five 99s.
+
+So, we're going to give some credit for a consistent interpretation either way.
 
 ## Getting the data for questions 4-8
 
