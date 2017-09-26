@@ -1,6 +1,11 @@
 **431 Assignment 2**
 
 1. The PDF of the [Assignment 2 Answer Sketch](https://github.com/THOMASELOVE/431homework/blob/master/HW2/431-sketch2-pw-2017.pdf) prepared by Dr. Love and the 431 staff is now available. Download the file, even though GitHub cannot display the file (claiming it is invalid - it's not invalid, it's just password-protected.)
+  + Four of the more interesting responses to Question 1 (the essay) [are available](https://goo.gl/5q6Nrw), and these include...
+    1. On Screening, Hepatitis C and Liver Cancer
+    2. On Web MD, and "a little knowledge is a dangerous thing"
+    3. Is self-control like a muscle? The problem of underpowered studies
+    4. On the polarizing impact of the free flow of "information"
 
 2. The [R Markdown](https://github.com/THOMASELOVE/431homework/blob/master/HW2/431-sketch2-2017.Rmd) for the Sketch is also now available.
 
