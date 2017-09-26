@@ -209,13 +209,32 @@ qqline(LBWunicef$lbw.pct, col = "red")
 
 \newpage
 
-## Drawing the Normal QQ plot with `gg_qq` from `Love-boost.R`
+## Drawing the Normal QQ plot with ggplot2
 
-As an alternative, we can use the gg_qq function in the `Love-boost.R` script, assuming we've successfully sourced in that script at the start.
+As an alternative, we could use the `gg_qq` function in the `Love-boost.R` script, assuming we've successfully sourced in that script at the start, but Dr. Love is deprecating that function. Instead, we could try...
 
-```{r use the gg_qq function}
-gg_qq(LBWunicef$lbw.pct)
+```{r ggplot2_qq}
+ggplot(LBWunicef, aes(sample = lbw.pct)) +
+  geom_qq()
 ```
+
+Or, if you want to get the line joining the 25^th^ and 75^th^ percentiles, (as in the `qqline` approach) you could try
+
+```{r ggplot2_qq_with_line}
+dat <- LBWunicef %>% filter(complete.cases(lbw.pct))
+y <- quantile(dat$lbw.pct, c(0.25, 0.75))
+x <- qnorm(c(0.25, 0.75))
+slope <- diff(y)/diff(x)
+int <- y[1L] - slope * x[1L]
+
+ggplot(LBWunicef, aes(sample = lbw.pct)) +
+  geom_qq(alpha = 0.5) +
+  geom_abline(slope = slope, intercept = int, col = "red") +
+  labs(title = "Normal Q-Q plot for Question 7",
+       subtitle = "with line drawn through 25th, 75th percentiles")
+```
+
+Note that this code is a modification of https://stackoverflow.com/questions/4357031/qqnorm-and-qqline-in-ggplot2/
 
 ## Summary Statistics
 
