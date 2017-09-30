@@ -1,0 +1,258 @@
+---
+title: "Assignment 3 Answer Sketch"
+author: "431 staff"
+date: "due 2017-09-29 at noon"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+---
+
+## R Setup
+
+```{r setup, message=FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 60)
+
+library(pander); library(MASS); library(tidyverse)
+
+## we could have used knitr::kable to make most of the
+## tables here, but pander has some nice features
+## in particular a nice approach to linear models
+```
+
+# Question 1 
+
+Question 1 requires a brief essay about how a field of interest to you makes its predictions, and asked for a specific example, with some context and reflection. 
+
+We don't write answer sketches for essays.
+
+\newpage
+
+# Question 2
+
+*Across the entire sample of 150 flowers, find and interpret the correlation of petal length and petal width. Does it matter much whether you use the Pearson or Spearman correlation?*
+
+We'll start by creating a tibble for the iris data.
+
+```{r make_iris_tibble}
+iris1 <- tbl_df(iris)
+```
+
+Next, I'll create a little table of results.
+
+```{r q02_table_of_results}
+r.pearson <- cor(iris1$Petal.Length, iris1$Petal.Width)
+r.spearman <- cor(iris1$Petal.Length, iris1$Petal.Width, method = "spearman")
+results <- data.frame(r.pearson, r.spearman)
+pander(results, digits = 3, 
+        caption = "Correlations of Petal Length and Petal Width")
+```
+
+Here is another way to do this, using the tidyverse
+
+```{r q02_table_2}
+results2 <- iris1 %>%
+  summarize(r.pearson = cor(Petal.Length, Petal.Width), 
+      r.spearman = cor(Petal.Length, Petal.Width, method = "spearman")) %>%
+  round(digits = 2)
+
+pander(results2, 
+        caption = "Correlations of Petal Length and Petal Width")
+```
+
+The Pearson correlation, at `r results2$r.pearson`, is slightly larger than the Spearman correlation of `r results2$r.spearman` between the petal lengths and widths. In either case, the correlation is very positive and strong. Before we see the picture, it seems as though there will be a strong linear association with a positive slope (so that the flowers with, for instance, larger petal widths are also generally going to be the flowers with larger petal lengths.)
+
+\newpage
+
+Incidentally, here's what these species look like.
+
+*Iris Setosa* 
+![Iris Setosa](images/iris-setosa.jpg) | 
+
+
+*Iris Versicolor* 
+![Iris Versicolor](images/iris-versicolor.jpg) 
+
+
+*Iris Virginica*
+![Iris Virginica](images/iris-virginica.jpg)
+
+\newpage
+
+# Question 3
+
+*Draw an appropriate scatterplot to assess the prediction of petal length (our outcome) using petal width as a predictor. Include both a loess smooth and regression line in your plot. Does the plot suggest that a straight line model is appropriate in this case?*
+
+```{r q03_plot}
+ggplot(iris1, aes(x = Petal.Width, y = Petal.Length)) +
+    geom_point(size = 3, shape = 1) + ## default size = 2
+    geom_smooth(method = "lm", se = FALSE, color = "red") + 
+    geom_smooth(method = "loess", se = FALSE, color = "blue") +
+    labs(title = "Question 3. Anderson/Fisher Iris Data")
+```
+
+A straight line model certainly fits most of the data reasonably well, although it looks like there are at least two groups of flowers (the smaller ones, with petal width less than 1 cm, as compared to the larger ones.) The pattern of the smaller flowers is less obviously on the proposed straight line than are the larger flowers, in my view.
+
+\newpage
+
+# Question 4
+
+*Suppose we are interested in which of the three types of iris (setosa, versicolor or virginica) shows the strongest linear relationship between petal length and petal width. Draw an attractive and thoughtfully labeled plot of the relevant data to address this issue, accompanied by a sentence or two describing the key findings from your plot. Postpone the discussion of a numerical summary to Question 5.*
+
+We assumed you would build a plot like this one.
+
+```{r q4_plot_width_by_length}
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) + 
+  geom_point(size = 3, shape = 1) + 
+  geom_smooth(method = "lm", se = FALSE) + 
+  labs(title = "Question 4a. Petal Width vs Petal Length")
+```
+
+\newpage
+
+As an alternative, the plot below permits the Petal Length tick marks on the horizontal axis to vary freely across the three facetted plots.
+
+```{r q4_alternative_plot_with_facets}
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) + 
+  geom_point(size = 3, shape = 1) + 
+  geom_smooth(method = "lm", se = FALSE, fullrange = TRUE, aes(color = Species)) + 
+  labs(title = "Question 4b. Petal Width vs. Petal Length") + 
+  facet_wrap(~ Species, scales = "free_x") + 
+  guides(color = FALSE)
+```
+
+\newpage
+
+# Question 5
+
+*Is the correlation between petal length and petal width larger or smaller in the sample of 150 flowers than in the species-specific samples of 50 flowers each?*
+
+The correlation between petal length and petal width for the entire sample of 150 flowers is `r round(cor(iris1$Petal.Length, iris1$Petal.Width), digits = 2)`, and this turns out to be far larger than any of the species-specific correlations. 
+
+Here are the Pearson correlation coefficients for the three species, sorted in descending order of their values: 
+
+```{r Q5_correlations}
+petal_corr <- iris1 %>% 
+  group_by(Species) %>% 
+  summarize(Correlation = round(cor(Petal.Length, Petal.Width), digits = 2)) %>%
+  arrange(desc(Correlation))
+
+pander(petal_corr, 
+        caption = "Pearson correlations for Petal Length vs Width")
+```
+
+
+*Why does this appear to be the case? On the basis of your correlation, which iris type shows the strongest linear relationship for the prediction of petal length on the basis of petal width? Specify the Pearson correlation (to two decimal places) for your strongest model here.*
+
+Within each of these three species, the linear relationship is weaker (both in terms of displaying more scatter around the regression line, and the line itself having less steep positive slope) within each species as compared to across the three species. For *versicolor*, these effects are somewhat less pronounced so that the linear relationship still looks pretty strong, as compared to *setosa* or *virginica*. Iris *versicolor* shows the strongest linear relationship, with a Pearson correlation coefficient of `r petal_corr[1,2]`.
+
+The three species are largely identifiable by petal width - the *setosa* are the smallest group, and the *versicolor* are generally smaller than *virginica*. The species-specific variation isn't strongly linear, but across species, we pick up substantial additional correlation, in that the petal lengths are similarly separated by species. 
+
+\newpage
+
+If you're interested, here's a table of the results, for both the Pearson and Spearman correlations, although I think Pearson is more relevant since we're looking specifically for *linear* associations that can be modeled, not merely monotone ones.
+
+```{r Q5_correlations_PS}
+iris1 %>% 
+  group_by(Species) %>% 
+  summarise(Pearson.Corr = 
+              round(cor(Petal.Length, Petal.Width, method = "pearson"), 
+                    digits = 2),
+            Spearman.Corr = 
+              round(cor(Petal.Length, Petal.Width, method = "spearman"), 
+                    digits = 2)) %>% 
+  arrange(desc(Pearson.Corr)) %>%
+  pander(caption = "Petal Length vs. Width Correlations")
+```
+
+
+\newpage
+
+# Question 6
+
+*Using the strongest model that you identified in question 5, what is the difference in the predicted petal length between two new flowers, one of whom has a petal width at the 75th percentile of the original data for that iris type, and the other of whom has a petal width at the 25th percentile of the original data for that iris type? Be sure to specify which of the two new flowers would be expected to be longer.*
+
+The linear model for the *iris versicolor* data is as follows.
+
+First, we'll make a `tbl_df` for the *versicolor* species data:
+
+```{r data_prep} 
+iris1.ver <- iris1 %>% filter(Species == "versicolor")
+```
+
+Then, we'll make the linear model and present it in a pretty format, using the `pander` package: 
+
+```{r Q6 model}
+ver.petal.lm <- lm(Petal.Length ~ Petal.Width, data = iris1.ver)
+pander(ver.petal.lm, 
+       caption = "Model for Versicolor Petal Length vs Petal Width")
+```
+
+We'll also need the quartiles for the Petal Widths in the *iris versicolor* data:
+
+```{r Q6 quartiles}
+fivenum(iris1.ver$Petal.Width)
+```
+
+```{r for_dialog, echo = FALSE}
+# Next, we'll build a little code to help build the next few sentences, 
+# storing the coefficients of our linear model and the quartiles
+# in named variables that we can refer to in a moment
+
+ver.lm.int <- coef(ver.petal.lm)[1] # store the intercept of the model
+ver.lm.slope <- coef(ver.petal.lm)[2] # store the slope of the model
+ver.pet.q25 <- quantile(iris1.ver$Petal.Width, 0.25) 
+ver.pet.q75 <- quantile(iris1.ver$Petal.Width, 0.75) 
+```
+
+So, the predicted petal length for an *iris versicolor* blossom at the 25th percentile (`r ver.pet.q25` cm) of petal width is: `r round(ver.lm.int, 2)` + `r round(ver.lm.slope, 2)` (`r ver.pet.q25`) 
+= **`r round(ver.lm.int + ver.lm.slope * ver.pet.q25, 2)` cm**
+
+The predicted petal length for an *iris versicolor* blossom at the 75th percentile (`r ver.pet.q75` cm) of petal width is: `r round(ver.lm.int, 2)` + `r round(ver.lm.slope, 2)` (`r ver.pet.q75`) 
+= **`r round(ver.lm.int + ver.lm.slope * ver.pet.q75, 2)` cm**.
+
+So the difference between those two predicted petal lengths is `r round(ver.lm.int + ver.lm.slope * ver.pet.q75, 2)` - `r round(ver.lm.int + ver.lm.slope * ver.pet.q25, 2)` = **`r round(ver.lm.int + ver.lm.slope * ver.pet.q75, 2) - round(ver.lm.int + ver.lm.slope * ver.pet.q25, 2)` cm.** The larger blossom in terms of petal width is thus predicted to have a larger petal length, as well.
+
+\newpage
+
+# Question 7 
+
+*Using two different approaches, build two gorgeous and thoughtfully labeled plots of the relationship between sepal length and sepal width, so that each plot distinguishes between the three types of iris. Use color to indicate each iris type, and show color-coded loess smooths (or linear fits, your choice) for each iris type.*
+
+*What conclusions can you draw about the effectiveness of the two types of plots you've built? Is one clearly better than the other? Why or why not?*
+
+The two plots we built are distinguished by the decision to not use (Figure 7a) or to use (Figure 7b) facets to separate out the three species of iris.
+
+```{r Q7_plot_1}
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) + 
+  geom_point() + 
+  geom_smooth(method = "loess", se = FALSE) + 
+  labs(title = "Figure 7a. Sepal Width increases 
+       with Sepal Length, for each Iris species", 
+       x = "Sepal Length (cm)", y = "Sepal Width (cm)")
+```
+
+\newpage
+
+```{r Q7_plot_2}
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) + 
+  geom_point() + 
+  geom_smooth(method = "loess", se = FALSE) + 
+  facet_wrap(~ Species) + 
+  guides(color = FALSE) +
+  labs(title = "Figure 7b. Sepal Width increases 
+       with Sepal Length, for each Iris species", 
+       x = "Sepal Length (cm)", y = "Sepal Width (cm)")
+```
+
+The strong correlation overall between petal length and petal width that we saw in questions 2-6 is not repeated here in the same way. In particular, we see from either plot that the *iris setosa* plants have the smallest sepal lengths on average, but the largest sepal widths. Choosing between Figures 7a and 7b is largely a matter of personal preference.
+
+```{r clean up}
+## clean up loose ends
+rm(r.pearson, r.spearman, ver.lm.int, ver.lm.slope)
+rm(ver.pet.q25, ver.pet.q75, ver.petal.lm)
+rm(iris1.ver, results, results2, petal_corr)
+```
