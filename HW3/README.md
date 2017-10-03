@@ -4,4 +4,4 @@
 
 2. The [R Markdown](https://github.com/THOMASELOVE/431homework/blob/master/HW2/431-sketch3-2017.Rmd) for the Sketch is also now available.
 
-3. Grades and the rubric will be available by Thursday 2017-10-05.
+3. [Grades](https://github.com/THOMASELOVE/431homework/blob/master/HW3/431-grades3-pw-2017.pdf) and [the Grading Rubric](https://github.com/THOMASELOVE/431homework/blob/master/HW3/431-rubric3-2017.pdf) are also available.
