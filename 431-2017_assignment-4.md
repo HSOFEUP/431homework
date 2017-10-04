@@ -23,7 +23,7 @@ Please review the General Information provided in [Assignment 1](https://github.
 Setting up Questions 1-6 - Using the Formula for Decoding Health News
 =====================================================================
 
-Find a headline from the internet related to health or medicine that describes the findings of a study published on January 1, 2014 or later. Then find the study being referred to in PUBMED. Use the [formula for updating your opinions about health news developed by Jeff Leek](http://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) we discussed in class, along with the abstract and full contents of the published study to complete Questions 1-6.
+Find a headline from the internet related to health or medicine that describes the findings of a study published on January 1, 2014 or later. Then find the study being referred to in PUBMED or its original presentation. Use the [formula for updating your opinions about health news developed by Jeff Leek](http://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) we discussed in class, along with the abstract and full contents of the published study to complete Questions 1-6.
 
 Question 1
 ----------
