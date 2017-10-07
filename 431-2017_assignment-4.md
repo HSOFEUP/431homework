@@ -1,7 +1,7 @@
 431 Assignment 4
 ================
 Thomas E. Love
-Due **2017-10-20** at noon. Version: 2017-08-28
+Due **2017-10-20** at noon. Version: 2017-10-07
 
 -   [Setting up Questions 1-6 - Using the Formula for Decoding Health News](#setting-up-questions-1-6---using-the-formula-for-decoding-health-news)
     -   [Question 1](#question-1)
@@ -23,7 +23,7 @@ Please review the General Information provided in [Assignment 1](https://github.
 Setting up Questions 1-6 - Using the Formula for Decoding Health News
 =====================================================================
 
-Find a headline from the internet related to health or medicine that describes the findings of a study published on January 1, 2014 or later. Then find the study being referred to in PUBMED or its original presentation. Use the [formula for updating your opinions about health news developed by Jeff Leek](http://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) we discussed in class, along with the abstract and full contents of the published study to complete Questions 1-6.
+Find a headline from the internet related to health or medicine that describes the findings of a study published on January 1, 2014 or later. Then find the study being referred to in PUBMED. Use the [formula for updating your opinions about health news developed by Jeff Leek](http://fivethirtyeight.com/features/a-formula-for-decoding-health-news/) we discussed in class, along with the abstract and full contents of the published study to complete Questions 1-6.
 
 Question 1
 ----------
@@ -77,6 +77,11 @@ Question 7
 
 For 10 diabetic adults treated with a special diet, the fasting blood sugar values (in mg/dl) before and after treatment were as shown below.
 
+| Person | A   | B   | C   | D   | E   | F   | G   | H   | I   | J   |
+|--------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Before | 340 | 335 | 220 | 285 | 320 | 230 | 190 | 210 | 295 | 270 |
+| After  | 290 | 315 | 250 | 280 | 311 | 213 | 200 | 208 | 279 | 258 |
+
 In question 7,
 
 -   Describe the entire study using the standard questions above for describing the study design when comparing two samples. You should be responding here to Parts A-F and also either G-H *or* I, whichever is appropriate.
@@ -86,6 +91,33 @@ Question 8
 ----------
 
 One of the problems in the study of SIDS is the lack of a good animal model. Baak and Huber (1974) studied the guinea pig as a possible model observing the effect of lethal histamines shock on the guinea pig thymus. The purpose was to determine if changes in the thymus of the guinea pig correspond to pathological changes observed in SIDS victims. In the experiment, 40 animals (20 male, 20 female) were randomly assigned either to "control" or to "histamine shock." The data are gathered in the table below. Note that we will ignore the sex information in this Assignment.
+
+<table>
+<colgroup>
+<col width="8%" />
+<col width="45%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Sex</th>
+<th align="center">Control</th>
+<th align="center">Histamine Shock</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">Female</td>
+<td align="center">6.4 6.2 6.9 6.9 5.4 7.5 6.1 7.3 5.9 6.8</td>
+<td align="center">8.4 10.2 6.2 5.4 5.5 7.3 5.2 5.1 5.7 9.8</td>
+</tr>
+<tr class="even">
+<td align="right">Male</td>
+<td align="center">4.3 7.5 5.2 4.9 5.7 4.3 6.4 6.2 5.0 5.0</td>
+<td align="center">7.5 6.7 5.7 4.9 6.8 6.6 6.9 11.8 6.7 9.0</td>
+</tr>
+</tbody>
+</table>
 
 In question 8,
 
