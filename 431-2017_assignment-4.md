@@ -40,7 +40,7 @@ Question 3
 
 Describe, in a few sentences, your original opinion (gut feeling) related to the conclusions of the study as summarized in the headline and news article, first in terms of a probability statement, and then calculate the appropriate odds, remembering to convert statements about probabilities to statements about odds. Provide some motivation for your internal prior probability, describing your relevant personal experiences or other factors that drove your gut feeling.
 
-<img src="images/hw4_probability-and-odds.png" width="80%" style="display: block; margin: auto;" />
+<img src="HW4/hw4_probability-and-odds.png" width="80%" style="display: block; margin: auto;" />
 
 Question 4
 ----------
@@ -108,13 +108,13 @@ One of the problems in the study of SIDS is the lack of a good animal model. Baa
 <tbody>
 <tr class="odd">
 <td align="right">Female</td>
-<td align="center">6.4 6.2 6.9 6.9 5.4 7.5 6.1 7.3 5.9 6.8</td>
-<td align="center">8.4 10.2 6.2 5.4 5.5 7.3 5.2 5.1 5.7 9.8</td>
+<td align="center"><code>6.4 6.2 6.9 6.9 5.4 7.5 6.1 7.3 5.9 6.8</code></td>
+<td align="center"><code>8.4 10.2 6.2 5.4 5.5 7.3 5.2 5.1 5.7 9.8</code></td>
 </tr>
 <tr class="even">
 <td align="right">Male</td>
-<td align="center">4.3 7.5 5.2 4.9 5.7 4.3 6.4 6.2 5.0 5.0</td>
-<td align="center">7.5 6.7 5.7 4.9 6.8 6.6 6.9 11.8 6.7 9.0</td>
+<td align="center"><code>4.3 7.5 5.2 4.9 5.7 4.3 6.4 6.2 5.0 5.0</code></td>
+<td align="center"><code>7.5 6.7 5.7 4.9 6.8 6.6 6.9 11.8 6.7 9.0</code></td>
 </tr>
 </tbody>
 </table>
