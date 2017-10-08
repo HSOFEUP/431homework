@@ -5,7 +5,7 @@ Due **2017-12-01** at noon. Version: 2017-10-08
 
 -   [Question 1](#question-1)
 -   [Question 2](#question-2)
--   [General Description of the Data for Questions 3-5](#general-description-of-the-data-for-questions-3-5)
+    -   [General Description of the Data for Questions 3-6](#general-description-of-the-data-for-questions-3-6)
 -   [Question 3](#question-3)
 -   [Question 4](#question-4)
 -   [Question 5](#question-5)
@@ -31,8 +31,8 @@ Find an example of a visualization designed to support a linear regression analy
 2.  Describe the visualization and explain what you believe it is trying to do. Specify why it is or is not effective, in your view.
 3.  Provide your best suggestion as to how the visualization might be improved, and explain why your change would be an improvement.
 
-General Description of the Data for Questions 3-5
-=================================================
+General Description of the Data for Questions 3-6
+-------------------------------------------------
 
 Low dietary intake or low plasma concentrations of retinol, beta-carotene, or other carotenoids might be associated with increased risk of developing certain types of cancer. However, relatively few studies have investigated the determinants of plasma concentrations of these micronutrients. A cross-sectional study was designed to investigate the relationship between personal characteristics and dietary factors, and plasma concentrations of retinol and/or beta-carotene. Study subjects (*n* = 300) were patients who had an elective surgical procedure during a three-year period to biopsy or remove a lesion of the lung, colon, breast, skin, ovary or uterus that was found to be non-cancerous.
 
