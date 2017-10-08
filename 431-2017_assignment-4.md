@@ -40,7 +40,7 @@ Question 3
 
 Describe, in a few sentences, your original opinion (gut feeling) related to the conclusions of the study as summarized in the headline and news article, first in terms of a probability statement, and then calculate the appropriate odds, remembering to convert statements about probabilities to statements about odds. Provide some motivation for your internal prior probability, describing your relevant personal experiences or other factors that drove your gut feeling.
 
-<img src="HW4/hw4_probability-and-odds.png" width="80%" style="display: block; margin: auto;" />
+Remember, if X is an event, and Pr(X) is the probability that X occurs, and odds(X) are the odds that X occurs, then Pr(X) = odds(X) / (1 + odds(X)) and odds(X) = Pr(X) / (1 - Pr(X)).
 
 Question 4
 ----------
