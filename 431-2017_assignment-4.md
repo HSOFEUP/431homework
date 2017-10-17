@@ -1,7 +1,7 @@
 431 Assignment 4
 ================
 Thomas E. Love
-Due **2017-10-20** at noon. Version: 2017-10-07
+Due **2017-10-27** at noon. Version: 2017-10-17
 
 -   [Setting up Questions 1-6 - Using the Formula for Decoding Health News](#setting-up-questions-1-6---using-the-formula-for-decoding-health-news)
     -   [Question 1](#question-1)
