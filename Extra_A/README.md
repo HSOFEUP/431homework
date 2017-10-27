@@ -13,4 +13,4 @@ This example reviews some of the key work we did in Part A of the course. It use
 9. Fit a linear model to the scatterplot you drew in part 8 for which a linear model seems more appropriate, and specify and describe (in a sentence of two) both the fitted least squares equation *and* the Pearson correlation coefficient.
 10. Identify the mammal in your model (in part 9) with the largest (in absolute value) regression residual. 
 
-An answer sketch for this document will be made available prior to Quiz 2.
+An answer sketch for this document [is now available](https://github.com/THOMASELOVE/431homework/blob/master/Extra_A/extra_A.pdf).
