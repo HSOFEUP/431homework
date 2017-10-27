@@ -1,7 +1,7 @@
 431 Assignment 5
 ================
 Thomas E. Love
-Due **2017-11-03** at noon. Version: 2017-10-08
+Due Thursday **2017-11-09** at noon. Version: 2017-10-08
 
 -   [Question 1 - The Signal and The Noise](#question-1---the-signal-and-the-noise)
 -   [Question 2](#question-2)
