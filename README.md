@@ -8,8 +8,9 @@ The schedule is
 2. [Assignment 2](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-2.md) was due Friday 2017-09-22 at noon. [View complete post-deadline materials](https://github.com/THOMASELOVE/431homework/tree/master/HW2). 
 3. [Assignment 3](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-3.md) was due Friday 2017-09-29 at noon. [View available post-deadline materials](https://github.com/THOMASELOVE/431homework/tree/master/HW3).
 
-4. [Assignment 4](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-4.md) will be due Friday 2017-10-27 at noon.
-5. [Assignment 5](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-5.md) will be due Friday 2017-11-03 at noon.
+4. [Assignment 4](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-4.md) was due Friday 2017-10-27 at noon. [View available post-deadline materials](https://github.com/THOMASELOVE/431homework/tree/master/HW4).
+
+5. [Assignment 5](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-5.md) will be due Thursday 2017-11-09 at noon.
 6. [Assignment 6](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-6.md) will be due Friday 2017-12-01 at noon.
 
 You will turn in your Assignments using the Canvas system at https://canvas.case.edu. The course’s primary listing is PQHS 431, but students in CRSP 431 and MPHP 431 should find the same information. The link to post your responses for each new Assignment will appear a day or two after the deadline for the preceding assignment has passed.
