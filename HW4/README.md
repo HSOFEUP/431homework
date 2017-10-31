@@ -4,4 +4,6 @@
 
 2. The [R Markdown](https://github.com/THOMASELOVE/431homework/blob/master/HW4/431-sketch4-2017.Rmd) for the Sketch is also now available.
 
-Other materials (grades and rubric) will be available soon.
+3. The [rubric for grading the assignment](https://github.com/THOMASELOVE/431homework/blob/master/HW4/431-rubric4-2017.pdf) is also available.
+
+Grades will be available soon.
