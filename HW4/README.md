@@ -6,4 +6,4 @@
 
 3. The [rubric for grading the assignment](https://github.com/THOMASELOVE/431homework/blob/master/HW4/431-rubric4-2017.pdf) is also available.
 
-Grades will be available soon.
+4. [Assignment 4 grades](https://github.com/THOMASELOVE/431homework/blob/master/HW4/431-grades4-pw-2017.pdf) are now posted. Download the file, even though GitHub cannot display the file (claiming it is invalid - it's not invalid, it's just password-protected.)
