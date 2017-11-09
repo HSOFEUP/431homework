@@ -1,7 +1,7 @@
 431 Assignment 5
 ================
 Thomas E. Love
-Due Thursday **2017-11-09** at noon. Version: 2017-10-08
+Due **2017-11-03** at noon. Version: 2017-11-08
 
 -   [Question 1 - The Signal and The Noise](#question-1---the-signal-and-the-noise)
 -   [Question 2](#question-2)
@@ -44,7 +44,7 @@ In a 2014 [follow-up report](http://www.nejm.org/doi/full/10.1056/NEJMoa1311593#
 Setup for Questions 5-10
 ------------------------
 
-A study of the effects of carbon monoxide exposure on men with coronary artery disease subjected the patients to several exercise tests . The men involved in the study were recruited from three different medical centers. Before combining the subjects into one large group to conduct the analysis, we need to first examine whether baseline characteristics of the subjects from the three medical centers (21 from Johns Hopkins University, 16 from Rancho Los Amigos, and 23 from St. Louis University) are comparable. Here, we examine pulmonary function at the start of the study, and we've pre-planned pairwise comparisons across all combinations of the three centers. For each of the 60 subjects, we have a measure of forced expiratory volume in 1 second (FEV<sub>1</sub>, in liters) stored in the `coexpose1.csv` and the `coexpose2.csv` files on [our course website](https://github.com/THOMASELOVE/431homework/tree/master/HW5).
+A study of the effects of carbon monoxide exposure on men with coronary artery disease subjected the patients to several exercise tests. The men involved in the study were recruited from three different medical centers. Before combining the subjects into one large group to conduct the analysis, we need to first examine whether baseline characteristics of the subjects from the three medical centers (21 from Johns Hopkins University, 16 from Rancho Los Amigos, and 23 from St. Louis University) are comparable. Here, we examine pulmonary function at the start of the study, and we've pre-planned pairwise comparisons across all combinations of the three centers. For each of the 60 subjects, we have a measure of forced expiratory volume in 1 second (FEV<sub>1</sub>, in liters) stored in the `coexpose1.csv` and the `coexpose2.csv` files on [our course website](https://github.com/THOMASELOVE/431homework/tree/master/HW5).
 
 This data set is built from an example in Chapters 11 and 12 of Pagano and Gauvreau. The data source is Allred EN et al. Acute effects of carbon monoxide exposure on individuals with coronary artery disease. Health Effects Institute Research Report Number 25, November 1989.
 
