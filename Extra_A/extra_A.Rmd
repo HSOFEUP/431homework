@@ -1,0 +1,133 @@
+---
+title: "431 Part A: Extra Example"
+author: "Thomas E. Love"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r set-options-and-load-packages, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(comment=NA)
+
+library(forcats); library(tidyverse)
+```
+
+# Sleep and Mammals
+
+This example reviews some of the key work we did in Part A of the course. It uses the `msleep` data set, which is part of the `ggplot2` package. Use the help file for that data set or visit http://ggplot2.tidyverse.org/reference/msleep.html to assist in understanding the data.
+
+## 1. Identify the number of rows and number of variables in the `msleep` data set.
+
+```{r}
+dim(msleep)
+```
+
+There are 83 rows and 11 variables.
+
+## 2. Specify the variable with the largest number of missing values in `msleep`. How many values are missing?
+
+```{r}
+summary(msleep)
+```
+
+`sleep_cycle` is missing for 51 of the 83 mammals.
+
+## 3. Identify the mammal who remains `awake` the longest, per day. What is the Z score for this mammal?
+
+Let's calculate the z scores, and then sort by the `awake` value.
+
+```{r}
+msleep %>% select(name, awake) %>%
+  mutate(z_awake = round((awake - mean(msleep$awake))/sd(msleep$awake),2)) %>%
+  arrange(desc(awake))
+```
+
+It's the giraffe, whose Z score is 1.92
+
+## 4. Display your R code to create a data set (called `sleep2`) from `msleep` which contains the variables `name`, `order`, `vore`, `sleep_cycle` and `sleep_rem` for those animals who have no missing values in any of those four variables, then convert the `vore` information into a factor. 
+
+```{r}
+sleep2 <- msleep %>%
+  select(name, order, vore, sleep_cycle, sleep_rem) %>%
+  filter(complete.cases(name, order, vore, sleep_cycle, sleep_rem)) %>%
+  mutate(vore = factor(vore))
+
+sleep2
+```
+
+## 5. According to the `order` variable, how many Primates (see the `order` variable) exist in your `sleep2` data set?
+
+```{r}
+sleep2 %>% filter(order == "Primates") 
+```
+
+There should be five.
+
+## 6. Draw a plot to compare the `sleep_rem` levels by `vore` group using your `sleep2` data. What do you conclude?
+
+```{r}
+ggplot(sleep2, aes(x = vore, y = sleep_rem, fill = vore)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.1) + 
+  guides(fill = FALSE)
+```
+
+In general, carnivores have the longest `sleep_rem` while herbivores have the shortest, at least in terms of medians. There are very few values (looks like just three) in the insectivores, and it looks like just five in the carnivores.
+
+## 7. Produce R code using the `%>%` pipe to produce a table which answers these two questions for the `sleep2` data: [a] Which `vore` group has the largest mean `sleep_rem` level? [b] Which `vore` group has the largest mean `sleep_cycle`? 
+
+```{r}
+sleep2 %>% group_by(vore) %>% summarize(n(), mean(sleep_rem), mean(sleep_cycle))
+```
+
+## 8. Now, return to the original `msleep` data for questions 8-10. Build a scatterplot of `brainwt` and `bodywt`, first using the raw data and then using a logarithmic scale for each variable. 
+
+```{r}
+sleep1 <- msleep %>%
+  filter(complete.cases(brainwt, bodywt))
+
+p1 <- ggplot(sleep1, aes(x = brainwt, y = bodywt)) +
+  geom_point() + 
+  labs(title = "Raw Data for Question 8",
+       x = "Brain Weight (kg)",
+       y = "Body Weight (kg)")
+
+p2 <- ggplot(sleep1, aes(x = brainwt, y = bodywt)) +
+  geom_point() +
+  scale_y_log10(breaks = c(0.01, 1, 10, 1000), labels = c(0.01, 1, 10, 1000)) +
+  scale_x_log10() +
+  labs(title = "Question 8 data, logged",
+       x = "Brain Weight (kg)",
+       y = "Body Weight (kg)")
+
+gridExtra::grid.arrange(p1, p2, nrow = 1)
+```
+
+## 9. Fit a linear model to the scatterplot you drew in part 8 for which a linear model seems more appropriate, and specify and describe (in a sentence of two) both the fitted least squares equation *and* the Pearson correlation coefficient.
+
+Clearly the log-log model is the better choice. I'll revert to a natural logarithm for the plot below, and the model.
+
+```{r}
+model9 <- lm(log(bodywt) ~ log(brainwt), data = sleep1)
+
+summary(model9)
+```
+
+```{r}
+ggplot(sleep1, aes(x = log(brainwt), y = log(bodywt))) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, col = "red") +
+  labs(title = "Question 8 data: Natural Logs, with Linear Model",
+       subtitle = "log(Body Weight) = 5.88 + 1.22 log(Brain Weight)",
+       x = "Natural log of Brain Weight (kg)",
+       y = "Natural log of Body Weight (kg)")
+```
+
+## 10. Identify the mammal in your model (in part 9) with the largest (in absolute value) regression residual. 
+
+```{r}
+sleep1$abs_res <- abs(model9$residuals)
+
+sleep1 %>% select(name, abs_res) %>% arrange(desc(abs_res)) 
+```
+
+The answer is Human.
