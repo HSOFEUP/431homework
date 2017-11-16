@@ -1,0 +1,192 @@
+---
+title: "Assignment 5 Answer Sketch"
+author: "431 staff"
+date: "due 2017-11-09 at noon"
+output:
+  pdf_document:
+    toc: yes
+---
+
+## R Setup
+
+
+```{r setup, message=FALSE}
+knitr::opts_chunk$set(comment=NA)
+options(width = 60)
+
+library(pander); library(viridis); library(MASS)
+library(gridExtra); library(tidyverse)
+source("Love-boost.R")
+coexpose1 <- read.csv("coexpose1.csv") %>% tbl_df
+coexpose2 <- read.csv("coexpose2.csv") %>% tbl_df
+```
+
+# Question 1 (20 points)
+
+\color{blue}*Silver writes (in several places prior to Chapter 12, but especially there) that the goal of any predictive model is to capture as much signal as possible and as little noise as possible. What does this mean to you in your scientific and other endeavours, going forward? Give a specific example. An answer of 150 - 250 words is what we're looking for.*
+
+\color{black}We still don't write sketches for essays.
+
+# Question 2 (10 points)
+
+\color{blue}*Suppose you plan to study whether surgery can prolong life among men suffering from prostate cancer, which typically develops and spreads very slowly. Men diagnosed with prostate cancer will be randomly assigned to either undergo surgery or not. Suppose you believe that approximately 10% of men diagnosed with prostate cancer but do not have surgery will eventually die from prostate cancer, and you want to do the study using a sample size that will retain at least 80% power to detect a drop down to 5%, using a two-sided approach with a 95% confidence level.* 
+
+*What is the smallest number of men (including both the surgery and non-surgery groups) that you will need to enroll in this new study to meet these specifications, using a balanced design? Provide the details of your calculation, and also provide a complete sentence or two interpreting the meaning of the results in context.*
+
+\color{black}We use the `power.prop.test` function to determine this sample size, with the probability without surgery at p~1~ = 0.10, and the probability after surgery at p~2~ = 0.05, at a 5% significance level with 80% power.
+
+```{r q2}
+power.prop.test(p1 = 0.10, p2 = 0.05, sig.level=0.05, power = 0.80)
+```
+
+We will require at least 435 men in each of the two arms of the study - meaning that we need a total of **870 men**.
+
+\newpage
+
+# Question 3 (10 points)
+
+\color{blue}*In 2003, the **New England Journal of Medicine** published results of a Scandinavian study of this issue. In that study, among 347 men randomly assigned to surgery, 16 eventually died of prostate cancer, compared with 31 of the 348 men who did not have surgery.* 
+
+*With 95% confidence, can you conclude that the odds of death due to prostate cancer is significantly greater for those who did NOT have surgery than it is for those who did have surgery? Provide appropriate details of your calculations, including a sentence or two interpreting the meaning of the results in context.*
+
+\color{black}We'll build the two by two table with the rows describing surgical status (the exposure) and the columns describing mortality due to prostate cancer (the outcome). We'll put death due to prostate cancer and no surgery in the top left cell so as to obtain the odds ratio that is specified. I will go ahead and use the Bayesian augmentation here, but that's certainly not critical.
+
+```{r q3, message=FALSE}
+twobytwo(31+1, 348-31+1, 16+1, 347-16+1, 
+         "No surgery", "Surgery", "PC Death", "No PC Death")
+```
+
+The sample odds ratio is 1.97 [2.02 without the Bayesian augmentation], and the 95% confidence interval for that odds ratio is (1.07, 3.61) [it would be (1.09, 3.77) without the augmentation] so there is a statistically significant difference in prostate cancer death rates, with higher odds of prostate cancer-related death associated with men who did not have the surgery. This is true because the 95% confidence interval for the appropriate odds ratio is greater than 1.
+
+\newpage
+
+# Question 4 (10 points)
+
+\color{blue}*In a 2014 follow-up report describing results at the end of 2012, a total of 63 men assigned to surgery and 99 men not assigned to surgery had died of prostate cancer. In a sentence or two, explain how an analysis of these new results compares to the conclusions you drew in Question 3.*
+
+\color{black}We'll use the same approach as in Question 3.
+
+```{r q4, message=FALSE}
+twobytwo(99+1, 348-99+1, 63+1, 347-63+1, 
+         "No surgery", "Surgery", "PC Death", "No PC Death")
+```
+
+
+There is no substantial change in our conclusions. The sample odds ratio is now only 1.78 [1.79 without the Bayesian augmentation], but the 95% confidence interval for that odds ratio is (1.25, 2.55) [it would be (1.25, 2.57) without the augmentation] so there is still a statistically significant difference in prostate cancer death rates, with higher odds of prostate cancer-related death associated with men who did not have the surgery. 
+
+\newpage
+
+## Setup for Questions 5-10
+
+\color{blue}*A study of the effects of carbon monoxide exposure on men with coronary artery disease subjected the patients to several exercise tests . The men involved in the study were recruited from three different medical centers. Before combining the subjects into one large group to conduct the analysis, we need to first examine whether baseline characteristics of the subjects from the three medical centers (21 from Johns Hopkins University, 16 from Rancho Los Amigos, and 23 from St. Louis University) are comparable\footnote{This data set is built from an example in Chapters 11 and 12 of Pagano and Gauvreau. The data source is Allred EN et al. Acute effects of carbon monoxide exposure on individuals with coronary artery disease. Health Effects Institute Research Report Number 25, November 1989.}. Here, we examine pulmonary function at the start of the study, and we've pre-planned pairwise comparisons across all combinations of the three centers. For each of the 60 subjects, we have a measure of forced expiratory volume in 1 second (FEV$_1$, in liters) stored in the `coexpose1.csv` and the `coexpose2.csv` files on our course website.*\color{black}
+
+# Question 5 (5 points)
+
+\color{blue}*The same data appear in the `coexpose1.csv` and the `coexpose2.csv` files. What is the difference between the two files, and which of the two files is more useful for fitting an ANOVA to compare the FEV~1~ means across the three medical centers?*\color{black}
+
+```{r q5}
+glimpse(coexpose1)
+glimpse(coexpose2)
+```
+
+The `coexpose1` file contains 26 rows and 3 columns, labeled by the names of the three centers. Each column contains the response (FEV$_1$) for the subjects at that center. This is what is called "wide" or "cast" formatted data.
+
+The `coexpose2` file contains 60 rows and 3 columns, labeled `pt.id`, `fev1` and `center`. We have each patient's ID, their FEV$1$ value, and their center, laid out in what is called "long" or "melted" format.
+
+The ANOVA expects us to have a variable for our outcome (`fev1`) and the treatment/group identifier (`center` in this case), so the `coexpose2` data will be more useful for our purposes.
+
+\newpage
+
+# Question 6 (5 points)
+
+\color{blue}*Produce a numerical summary to compare the means across the three centers, and specify the rank order (highest to lowest) of the sampled FEV~1~ levels.*
+
+\color{black}There are several ways to accomplish this, including a base R approach using `by` (which is what we expected you to do), and a `dplyr` approach using `group_by` and `do` ...
+
+```{r q6}
+#using base R
+by(coexpose2$fev1, coexpose2$center, mosaic::favstats)
+
+#using dplyr
+coexpose2 %>%
+  group_by(center) %>%
+  do(mosaic::favstats(.$fev1)) %>% 
+  arrange(desc(mean)) %>%
+    pander()
+```
+
+By the mean (or, in fact, the median) `fev1` value in each `center`, we'd rank `rancho.los.amigos` highest, followed by `st. louis` and finally `johns.hopkins`, with the smallest `fev1` mean/median. 
+
+\newpage
+
+# Question 7 (10 points)
+
+\color{blue}*Produce a graphical summary to compare the three centers that allows you to assess the Normality and Equal Variances assumptions of an ANOVA to compare the FEV~1~ means across the three medical centers. What conclusion do you draw about the assumptions in this setting?*
+
+
+\color{black}I'd probably use a simple boxplot, although there are certainly other alternatives. There is one identified outlier in the Johns Hopkins data, but I see no serious concerns with either the Normality or the Constant Variance assumption.
+
+```{r a7}
+ggplot(coexpose2, aes(y = fev1, x = center, fill = center)) + 
+  geom_boxplot(notch = TRUE) + coord_flip() + 
+  labs(title = "Boxplot of fev1 across centers", 
+       y = "FEV1 (%)", 
+       x = "Center") + 
+  theme(legend.position = "none") + 
+  scale_fill_viridis(discrete = TRUE)
+```
+
+\newpage
+
+
+# Question 8 (10 points) 
+
+\color{blue}*Compare the means of the three different medical centers using an analysis of variance. What conclusion do you draw, using a **90%** confidence level?*
+
+\color{black}
+
+```{r a8}
+pander(anova(lm(fev1 ~ center, data = coexpose2)))
+```
+
+Since *p* < 0.10, at the 90% confidence level, we conclude that there is a statistically detectable difference in the means at the three centers.
+
+
+# Question 9 (10 points)
+
+\color{blue}*Specify the linear model regression equation used to predict our FEV$_1$ outcome on the basis of medical center.*
+
+\color{black}
+
+```{r a9}
+pander(summary(lm(fev1 ~ center, data = coexpose2)))
+```
+
+The equation is `fev1` = 2.63 + 0.41 (`rancho.los.amigos`) + 0.25 (`st.louis`). The Johns Hopkins center patients are used as the baseline category in this case. Rancho Los Amigos patients had `fev1` values (on average) 0.41 points higher than did the Hopkins patients. St. Louis patients were (on average) 0.25 points higher than Hopkins.
+
+\color{blue}*What fraction of the variation in FEV$_1$ levels is explained by the medical center?*
+
+\color{black}R^2^ = 0.09854, so just under 10% of the variation in `fev1` is accounted for by `center`.
+
+\newpage
+
+# Question 10 (10 points)
+
+\color{blue}*This is a pre-planned comparison, but the sample sizes differ across the groups being compared. Obtain the results from a Tukey HSD method  and then a Bonferroni approach for pairwise comparisons of the population means, in each case again using a 90\% confidence level \footnote{Hint: The {\tt TukeyHSD} function takes a {\tt conf.level} argument to specify something other than the default 0.95. So, in fact, does the Bonferroni approach using {\tt pairwise.t.test}, although it's not actually necessary there, since that method only produces p values, not confidence intervals.}. Do your conclusions differ? * 
+
+\color{black}
+
+- With an $\alpha$ of 0.10, the only significant difference we see in either the Bonferroni or the Tukey results is that Rancho Los Amigos has a statistically significantly larger mean than does Johns Hopkins.
+
+```{r a10, fig.height=7, warning = FALSE}
+pairwise.t.test(coexpose2$fev1, coexpose2$center, p.adjust.method="bonferroni")
+
+TukeyHSD(aov(coexpose2$fev1 ~ coexpose2$center), conf.level=.90)
+
+plot(TukeyHSD(aov(coexpose2$fev1 ~ coexpose2$center), conf.level=.90))
+```
+
+
+
+
+
