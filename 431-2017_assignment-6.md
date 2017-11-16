@@ -13,7 +13,9 @@ Due **2017-12-01** at noon. Version: 2017-10-08
 
 Please review the General Information provided in [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md), as well as at <https://github.com/THOMASELOVE/431homework> and in the [Course Syllabus](https://thomaselove.github.io/431syllabus/)
 
-Question 1
+**On 2017-11-16**, Dr. Love decided to make Questions 1 and 6 optional. Only questions 2-5 are required now, for a complete assignment.
+
+Question 1 (is completely optional - if you want to do it for extra credit, you can, but we will not require it)
 ==========
 
 > It is still standard to display data summaries as tables rather than graphs, even though graphs are typically better suited for perceiving trends and making comparisons and predictions.
@@ -22,7 +24,7 @@ Question 1
 
 Find a Wikipedia page with a table that interests you. Scrape the data from the table and clean it up, converting character strings to numbers, dropping unneeded variables, and so forth, leading to a tidy data set in R. Create a statistical graph from these data. Write a caption for your figure that interprets your findings. Be sure to provide the link to the original Wikipedia table.
 
-Question 2
+Question 2 
 ==========
 
 Find an example of a visualization designed to support a linear regression analysis in a published work (online or not) for which you can find the complete sourcing information, and which was built no earlier than January 1, 2014. Provide the complete reference and a copy of the image itself (including any captions or titles) and surrounding material for the visualization, and provide a brief essay (likely to run 150-250 words) which accomplishes each of the following tasks:
@@ -138,7 +140,7 @@ Question 5
 
 In a single sentence, outline the key findings for plasma retinol specified by your model.
 
-Question 6
+Question 6 (is also 100% completely optional - feel free to do it for a little extra credit if you like, but it is not required.)
 ==========
 
 At this point, we will return to working with the whole set of 300 observations. Validate your choice of model for plasma retinol level by using your final choice developed in questions 3-5 to predict data for the 25 cases that you have withheld from the data, comparing your final model to these two other models:
