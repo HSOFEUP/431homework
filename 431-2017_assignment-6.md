@@ -1,22 +1,24 @@
 431 Assignment 6
 ================
 Thomas E. Love
-Due **2017-12-01** at noon. Version: 2017-10-08
+Due **2017-12-01** at noon. Version: 2017-11-19
 
--   [Question 1](#question-1)
--   [Question 2](#question-2)
+-   [On 2017-11-16, Dr. Love decided to eliminate Questions 1 and 6 from this assignment. Instead, please simply do questions 2-5.](#on-2017-11-16-dr.-love-decided-to-eliminate-questions-1-and-6-from-this-assignment.-instead-please-simply-do-questions-2-5.)
+-   [The Old Question 1 (below) is NO LONGER PART OF THIS ASSIGNMENT. Please skip it.](#the-old-question-1-below-is-no-longer-part-of-this-assignment.-please-skip-it.)
+-   [Question 2 (30 points)](#question-2-30-points)
     -   [General Description of the Data for Questions 3-6](#general-description-of-the-data-for-questions-3-6)
--   [Question 3](#question-3)
--   [Question 4](#question-4)
--   [Question 5](#question-5)
--   [Question 6](#question-6)
+-   [Question 3 (15 points)](#question-3-15-points)
+-   [Question 4 (15 points)](#question-4-15-points)
+-   [Question 5 (10 points)](#question-5-10-points)
+-   [The Old Question 6 (below) is NO LONGER REQUIRED in this assignment. Please skip it.](#the-old-question-6-below-is-no-longer-required-in-this-assignment.-please-skip-it.)
 
 Please review the General Information provided in [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md), as well as at <https://github.com/THOMASELOVE/431homework> and in the [Course Syllabus](https://thomaselove.github.io/431syllabus/)
 
-**On 2017-11-16**, Dr. Love decided to make Questions 1 and 6 optional. Only questions 2-5 are required now, for a complete assignment.
+On 2017-11-16, Dr. Love decided to eliminate Questions 1 and 6 from this assignment. Instead, please simply do questions 2-5.
+=============================================================================================================================
 
-Question 1 (is completely optional - if you want to do it for extra credit, you can, but we will not require it)
-==========
+The Old Question 1 (below) is NO LONGER PART OF THIS ASSIGNMENT. Please skip it.
+================================================================================
 
 > It is still standard to display data summaries as tables rather than graphs, even though graphs are typically better suited for perceiving trends and making comparisons and predictions.
 
@@ -24,14 +26,18 @@ Question 1 (is completely optional - if you want to do it for extra credit, you 
 
 Find a Wikipedia page with a table that interests you. Scrape the data from the table and clean it up, converting character strings to numbers, dropping unneeded variables, and so forth, leading to a tidy data set in R. Create a statistical graph from these data. Write a caption for your figure that interprets your findings. Be sure to provide the link to the original Wikipedia table.
 
-Question 2 
-==========
+**Note: this Question will be used in 432.**
+
+Question 2 (30 points)
+======================
 
 Find an example of a visualization designed to support a linear regression analysis in a published work (online or not) for which you can find the complete sourcing information, and which was built no earlier than January 1, 2014. Provide the complete reference and a copy of the image itself (including any captions or titles) and surrounding material for the visualization, and provide a brief essay (likely to run 150-250 words) which accomplishes each of the following tasks:
 
 1.  Describe the linear regression model behind the visualization. Explain its context and why it is important. Specify the research question that this regression model answers.
 2.  Describe the visualization and explain what you believe it is trying to do. Specify why it is or is not effective, in your view.
 3.  Provide your best suggestion as to how the visualization might be improved, and explain why your change would be an improvement.
+
+**NOTE**: A rubric for Questions 2-5 [is available here](https://github.com/THOMASELOVE/431homework/blob/master/HW6/README.md), so you can fine-tune your response, accordingly.
 
 General Description of the Data for Questions 3-6
 -------------------------------------------------
@@ -125,23 +131,29 @@ The essential conclusion we are looking to make (if it is true) in the context o
 
 Your fundamental task is to produce and interpret a series of appropriate statistical models to help us decide whether or not these conclusions are reasonable, in the case of plasma retinol, in particular. The most important thing is to accurately reflect [the data you have received](https://github.com/THOMASELOVE/431homework/tree/master/HW6).
 
-Question 3
-==========
+Question 3 (15 points)
+======================
 
 Build and specify a model for plasma retinol. Specify whether a transformation of the outcome is necessary, and how you know. If you need a transformation, specify a wise choice. Select predictors from the demographic, behavioral and relevant dietary factors described in the data (i.e. not including `id, betadiet, betaplasma` or `holdout`.) Motivate your choice of predictors, including an assessment of the impact of collinearity, with appropriate accounting for it in your final choice of model. Specify and demonstrate the impact of your model selection algorithm. For questions 3-5, use only the **275 observations** where `holdout` is 0.
 
-Question 4
-==========
+**NOTE**: A rubric for Questions 2-5 [is available here](https://github.com/THOMASELOVE/431homework/blob/master/HW6/README.md), so you can fine-tune your response, accordingly.
+
+Question 4 (15 points)
+======================
 
 Summarize the findings in a clear presentation of your final model, including a short recap of the steps you took to produce it. Demonstrate the utility of the final model, including summaries based on *R*<sup>2</sup> and significance testing. Demonstrate that your final model passes required checks of assumptions. For questions 3-5, use only the **275 observations** where `holdout` is 0.
 
-Question 5
-==========
+**NOTE**: A rubric for Questions 2-5 [is available here](https://github.com/THOMASELOVE/431homework/blob/master/HW6/README.md), so you can fine-tune your response, accordingly.
+
+Question 5 (10 points)
+======================
 
 In a single sentence, outline the key findings for plasma retinol specified by your model.
 
-Question 6 (is also 100% completely optional - feel free to do it for a little extra credit if you like, but it is not required.)
-==========
+**NOTE**: A rubric for Questions 2-5 [is available here](https://github.com/THOMASELOVE/431homework/blob/master/HW6/README.md), so you can fine-tune your response, accordingly.
+
+The Old Question 6 (below) is NO LONGER REQUIRED in this assignment. Please skip it.
+====================================================================================
 
 At this point, we will return to working with the whole set of 300 observations. Validate your choice of model for plasma retinol level by using your final choice developed in questions 3-5 to predict data for the 25 cases that you have withheld from the data, comparing your final model to these two other models:
 
@@ -149,3 +161,5 @@ At this point, we will return to working with the whole set of 300 observations.
 -   A model that uses the entire set (kitchen sink) of possible predictors, i.e. everything but `id`, `betadiet` and `betaplasma`.
 
 Which model looks best in your comparison? Justify your response.
+
+**Note: Question 6 will be answered in the Answer Sketch, but we will not cover this material in time for this Assignment. So skip it.**
