@@ -2,6 +2,8 @@
 
 There are six main Homework Assignments for PQHS/CRSP/MPHP 431.
 
+Once all six assignments are complete, you may find an error in grading that you would like Dr. Love to review. You would do this by filling out [this Google Form](https://goo.gl/forms/v5zBIuGnrLkbiuXU2) before noon on 2017-12-13.
+
 The schedule is
 
 1. [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md) was due Friday 2017-09-15 at noon. [View complete post-deadline materials](https://github.com/THOMASELOVE/431homework/tree/master/HW1). 
