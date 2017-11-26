@@ -20,7 +20,7 @@ library(tidyverse)
 source("Love-boost.R")
 ```
 
-We are grading questions 1-6 and 8-11, for a total of 150 points.
+We are grading questions 1-6 and 8-11, for a total of 145 points.
 
 # Question 1 (10 points)
 
@@ -178,7 +178,7 @@ The assumptions with the bootstrap are that we have a random (or at least repres
 
 \newpage
 
-# Question 8 (50 points)
+# Question 8 (45 points)
 
 *In the experiment studied in this question, 40 animals (20 male, 20 female) were randomly assigned either to "control" or to "histamine shock." The tabulated variable is medullary blood vessel surface (in $mm^2 / mm^3$). Ignore the sex information.*
 
@@ -238,6 +238,14 @@ ggplot(hw4q8, aes(x = trt, y = surface, fill = trt)) +
 ```
 
 We have a single outlier in the histamine shock group, at `r max(hw4q8$surface[hw4q8$trt=="Histamine Shock"])`. Based on a sample of 20 observations, we'd expect to see an outlier, certainly, so that by itself isn't enough to push me away from assuming a Normal distribution for each of the two populations (control and histamine shock) here. I'd be inclined to use a confidence interval based on a t test. Given the balanced design with 20 animals in each group, whether or not we assume equal population variance shouldn't matter much.
+
+If you wanted to, you could have used the `eda.ksam` function in `Love-boost.R` to produce your graphical summaries.
+
+```{r}
+eda.ksam(outcome = hw4q8$surface, group = hw4q8$trt,
+         axis.title = "Medullary Blood Surface", 
+         main.title = "Graphical Comparisons in Question 8")
+```
 
 ## Question 8j. On the basis of the most appropriate 95\% CI, can you conclude that the outcome differs significantly between "control" and "histamine shock?" Justify your assumptions. (5 points)
 
