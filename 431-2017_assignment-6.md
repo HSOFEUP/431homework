@@ -1,9 +1,9 @@
 431 Assignment 6
 ================
 Thomas E. Love
-Due **2017-12-01** at noon. Version: 2017-11-19
+Due **2017-12-04** at noon. Version: 2017-11-27
 
--   [On 2017-11-16, Dr. Love decided to eliminate Questions 1 and 6 from this assignment. Instead, please simply do questions 2-5.](#on-2017-11-16-dr.-love-decided-to-eliminate-questions-1-and-6-from-this-assignment.-instead-please-simply-do-questions-2-5.)
+-   [On 2017-11-16, Dr. Love decided to eliminate Questions 1 and 6 from this assignment. Instead, please simply do questions 2-5. He also changed the DUE DATE to 2017-12-04 at noon.](#on-2017-11-16-dr.-love-decided-to-eliminate-questions-1-and-6-from-this-assignment.-instead-please-simply-do-questions-2-5.-he-also-changed-the-due-date-to-2017-12-04-at-noon.)
 -   [The Old Question 1 (below) is NO LONGER PART OF THIS ASSIGNMENT. Please skip it.](#the-old-question-1-below-is-no-longer-part-of-this-assignment.-please-skip-it.)
 -   [Question 2 (30 points)](#question-2-30-points)
     -   [General Description of the Data for Questions 3-6](#general-description-of-the-data-for-questions-3-6)
@@ -14,8 +14,8 @@ Due **2017-12-01** at noon. Version: 2017-11-19
 
 Please review the General Information provided in [Assignment 1](https://github.com/THOMASELOVE/431homework/blob/master/431-2017_assignment-1.md), as well as at <https://github.com/THOMASELOVE/431homework> and in the [Course Syllabus](https://thomaselove.github.io/431syllabus/)
 
-On 2017-11-16, Dr. Love decided to eliminate Questions 1 and 6 from this assignment. Instead, please simply do questions 2-5.
-=============================================================================================================================
+On 2017-11-16, Dr. Love decided to eliminate Questions 1 and 6 from this assignment. Instead, please simply do questions 2-5. He also changed the DUE DATE to 2017-12-04 at noon.
+=================================================================================================================================================================================
 
 The Old Question 1 (below) is NO LONGER PART OF THIS ASSIGNMENT. Please skip it.
 ================================================================================
