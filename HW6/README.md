@@ -23,7 +23,7 @@ This question requires:
 - b. An assessment of collinearity. (2 points)
 - c. A statement about how predictors were chosen, specifically the model selection algorithm, and correct application of that algorithm (10 points)
 
-In each part, award full credit for successful completion of the task, most of the credit for a reasonble effort with a minor problem, and meaningfully fewer points if a key step is completely missing.
+In each part, award full credit for successful completion of the task, most of the credit for a reasonable effort with a minor problem, and meaningfully fewer points if a key step is completely missing.
 
 ## Question 4 (15 points)
 
