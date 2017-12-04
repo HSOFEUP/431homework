@@ -1,6 +1,7 @@
 **431 Assignment 6**
 
-1. An Answer Sketch and Grades will appear here when the deadline is reached for this Assignment.
+1. An Answer Sketch and Grading Rubric are found above now.
+2. Grades will be posted here as soon as they are available.
 
 # A Partial Rubric
 
