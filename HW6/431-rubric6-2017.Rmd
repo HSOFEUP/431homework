@@ -1,0 +1,78 @@
+---
+title: "431 Assignment 6 Grading Rubric"
+author: "431 Staff"
+date: "Assignment was due at noon 2017-12-04"
+linkcolor: blue
+output:
+  pdf_document: default
+---
+
+## We are grading questions 2, 3, 4, and 5 for a total of 70 possible points.
+
+# Question 1 (Yes or No)
+
+If the student did what was asked, or got very close to a correct and complete response, give a Yes, otherwise, mark as No. A substantial effort that is largely successful is required for a Yes.
+
+# Question 2 (30 points)
+
+\color{blue}*Find an example of a visualization designed to support a linear regression analysis in a published work (online or not) for which you can find the complete sourcing information, and which was built no earlier than January 1, 2014. Provide the complete reference and a copy of the image itself (including any captions or titles) and surrounding material for the visualization, and provide a brief essay (likely to run 150-250 words) which accomplishes each of the following tasks:*\color{black}
+
+- \color{blue}*Task A: Describe the linear regression model behind the visualization. Explain its context and why it is important. Specify the research question that this regression model answers.*\color{black}
+- \color{blue}*Task B: Describe the visualization and explain what you believe it is trying to do. Specify why it is or is not effective, in your view.*\color{black}
+- \color{blue}*Task C: Provide your best suggestion as to how the visualization might be improved, and explain why your change would be an improvement.*\color{black}
+
+Students got 26-30 points if
+
+- their essay was clear, 
+- they addressed the specified tasks (A, B and C above) in an easy-to-follow manner, 
+- they didn't make serious grammar or spelling mistakes, and 
+- they responded in at least 150 words. 
+
+If some, but not all of those things were true, they scored 21-25 points.
+
+# Question 3 (15 points)
+
+This question requires:
+
+a. A statement as to whether a transformation is necessary, and justification for the choice. (3 points)
+b. An assessment of collinearity. (2 points)
+c. A statement about how predictors were chosen, specifically the model selection algorithm, and correct application of that algorithm (10 points)
+
+In each part, award full credit for successful completion of the task, most of the credit (2/3 for a, 1/2 for b or 8/10 for c, respectively) for a reasonable effort with a minor problem, and meaningfully fewer points if a key step is completely missing.
+
+# Question 4 (15 points)
+
+This question requires:
+
+a. A clear presentation of the model with a short recap of the steps taken to produce it. (5 points)
+b. Summaries based on R^2^ and significance testing (5 points)
+c. Demonstration that the model passed assumption checks (5 points)
+
+For each of the three parts, award 3 points for a reasonable effort, and 5 points for a reasonable effort that produces a correct and logical response.
+
+# Question 5 (10 points)
+
+Students receive 10 points on this question for a correct and logical response (if their answer differs from mine but is correct given their work in Questions 3 and 4, award full credit here), 9 points for a minor error (perhaps a spelling mistake), and 6-8 points out of ten for a reasonable effort but at least one substantial problem or a substantial grammar issue.
+
+# Question 6 (Yes or No)
+
+If the student did what was asked or got very close to a correct response, give a Yes, otherwise, mark as No. 
+
+# Class Roster Elements
+
+The roster is available now in the same folder as the other rosters.
+
+Column | Explanation
+:---------------: | -----------------------------------------------------------------
+Name, ID, etc. | Student Identifying Information 
+`HW6-Q1` | Question 1 attempt (Yes/No)
+`HW6-Q2` | Question 2 results (0-30 points)
+`HW6-Top Q2 Essays` | Identify the top 6-10 Essays in Q2
+`HW6-Q3` | Question 3 results (0-15 points)
+`HW6-Q4` | Question 4 results (0-15 points)
+`HW6-Q5` | Question 5 results (0-10 points)
+`HW6-Q6` | Question 6 attempt (Yes/No)
+`HW6` | Total Score on Assignment 6 (0-70 points)
+`HW6-Notes` | Notes from TAs to Students
+
+Yes grades on Q1 and Q6 will be taken into account separately by Dr. Love. The score on the assignment is based solely on Questions 2-5.
