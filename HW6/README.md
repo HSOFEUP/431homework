@@ -1,7 +1,7 @@
 **431 Assignment 6**
 
 1. Answer Sketch (Rmd and password-protected PDF) and Grading Rubric are now available.
-2. Grades will be posted here as soon as they are available.
+2. Grades are now posted above, as well.
 
 # A Partial Rubric
 
